@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WebApp Dashboard</title>
+    <link rel="stylesheet" href="css/styles.css">
+  </head>
+  <body>
+
+    <div class="grid-outer">
+      <header class="header">
+        <span class="header__logo">Stat</span>
+        <svg version="1.1" class="header__icon-bell" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+        	 viewBox="0 0 32 32" style="enable-background:new 0 0 32 32;">
+          <g id="_x36__6_">
+          		<path class="st0" style="fill:#5dd2d6;" d="M24,18v-8c0-5.5-4.5-10-10-10S4,4.5,4,10v8l-4,8h9.1c0.5,2.3,2.5,4,4.9,4s4.4-1.7,4.9-4H28L24,18z M14,28
+          			c-1.3,0-2.4-0.8-2.8-2h5.6C16.4,27.2,15.3,28,14,28z M3,24l3-6v-8c0-4.4,3.6-8,8-8s8,3.6,8,8v8l3,6H3z"/>
+          </g>
+        </svg>
+        <div class="header__user">
+          <img src="images/member-3.jpg" alt="" class="header__user-img">
+          <span class="header__user-name">Mia May</span>
+        </div> <!-- user div end -->
+      </header>
+
+      <nav class="nav">
+        <a href="#dash-top"><img src="icons/icon-dashboard.svg" alt="" class="nav__icon"></a>
+        <a href="#dash-members"><img src="icons/icon-members.svg" alt="" class="nav__icon"></a>
+        <a href="#dash-visits"><img src="icons/icon-visits.svg" alt="" class="nav__icon"></a>
+        <a href="#dash-settings"><img src="icons/icon-settings.svg" alt="" class="nav__icon"></a>
+      </nav>
+
+      <main>
+        <div class="grid-main">
+
+          <div class="card dashboard__top" id="dash-top">
+              <div>
+              <h2>Dashboard</h2>
+              </div>
+              <div>
+                <input class="dashboard__top-search" type="text" name="search-bar" placeholder="Search">
+              </div>
+            <section class="dashboard__traffic">
+              <h3>Traffic</h3>
+              <canvas id="myChart" width="300" height="80"></canvas>
+            </section>
+          </div> <!-- main top div end -->
+
+          <section class="card dashboard__daily" id="dash-visits">
+            <h3> Daily Traffic</h3>
+          </section>
+
+          <section class="card dashboard__mobile">
+            <h3>Mobile Users</h3>
+          </section>
+
+          <section class="card dashboard__social">
+            <h3>Social Stats</h3>
+          </section>
+
+          <section class="card dashboard__members" id="dash-members">
+            <h3>New Members</h3>
+          </section>
+
+          <section class="card dashboard__recent">
+            <h3>Recent Activity</h3>
+          </section>
+
+          <section class="card dashboard__msg">
+            <h3>Message User</h3>
+          </section>
+
+          <section class="card dashboard__settings" id="dash-settings">
+            <h3>Settings</h3>
+          </section>
+
+        </div> <!-- grid-main end -->
+      </main>
+    </div> <!-- grid-outer end -->
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.bundle.min.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>

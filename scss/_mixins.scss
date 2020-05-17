@@ -1,0 +1,9 @@
+@mixin grid($name) {
+  grid-area: $name;
+}
+
+@mixin mq($breakpoint) {
+  @media (min-width: $breakpoint) {
+    @content;
+  }
+}
