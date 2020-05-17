@@ -35,24 +35,38 @@
         <div class="grid-main">
 
           <div class="card dashboard__top" id="dash-top">
-              <div>
+              <div class="dash-title">
               <h2>Dashboard</h2>
               </div>
-              <div>
+              <div class="search">
                 <input class="dashboard__top-search" type="text" name="search-bar" placeholder="Search">
               </div>
-            <section class="dashboard__traffic">
+            <section class="card dashboard__traffic">
               <h3>Traffic</h3>
-              <canvas id="myChart" width="300" height="80"></canvas>
+              <div class="timeframes">
+                <input type="radio" name="timeframe" id="hourly"><label for="hourly">Hourly</label>
+                <input type="radio" name="timeframe" id="daily"><label for="daily">Daily</label>
+                <input type="radio" name="timeframe" id="weekly"><label for="weekly">Weekly</label>
+                <input type="radio" name="timeframe" id="monthly"><label for="monthly">Monthly</label>
+              </div>
+              <div class="chart__traffic">
+                <canvas id="trafficChart" width="300" height="100"></canvas>
+              </div>
             </section>
           </div> <!-- main top div end -->
 
           <section class="card dashboard__daily" id="dash-visits">
             <h3> Daily Traffic</h3>
+            <div class="chart__daily">
+              <!-- <canvas id="dailyChart"></canvas> -->
+            </div>
           </section>
 
           <section class="card dashboard__mobile">
             <h3>Mobile Users</h3>
+            <div class="chart__mobile">
+              <!-- <canvas id="mobileChart"></canvas> -->
+            </div>
           </section>
 
           <section class="card dashboard__social">
@@ -80,6 +94,7 @@
     </div> <!-- grid-outer end -->
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.bundle.min.js"></script>
-    <script src="js/script.js"></script>
+    <script src="js/chart.js"></script>
+    <!-- <script src="js/script.js"></script> -->
 </body>
 </html>

@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,500;1,400;1,500&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,500;1,500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
 @import 'normalize',
         'variables',
         'mixins';
@@ -68,6 +69,7 @@ body {
       "dash-settings";
     grid-gap: 5px;
     @include mq(768px) {
+      width: calc(100vw - 60px);
       grid-template-columns: 1fr 1fr;
       grid-template-areas:
         "dash-top dash-top"
@@ -202,23 +204,31 @@ main {
 h2, h3 {
   font-family: 'Roboto', sans-serif;
   font-weight: 500;
-  font-size: .9rem;
   margin: 0;
+  display: inline-block;
+}
+
+h2 {
+  font-size: 1.1rem;
+}
+
+h3 {
+  text-transform: uppercase;
+  font-size: .9rem;
 }
 
 .card {
   background: #fff;
-}
-
-%dash {
-  padding: 20px;
+  &:not(.dashboard__top) {
+    padding: 20px;
+  }
 }
 
 .dashboard {
   &__top {
     @include grid(dash-top);
     display: grid;
-    grid-template-columns: minmax(min-content,140px) 1fr;
+    grid-template-columns: minmax(min-content,125px) 1fr;
     grid-template-rows: 60px 1fr;
     grid-template-areas:
       "dash-title dash-search"
@@ -226,11 +236,11 @@ h2, h3 {
     & div {
       display: flex;
       align-items: center;
-      &:first-of-type {
+      &.dash-title {
         padding-left: 20px;
         @include grid(dash-title);
       }
-      &:nth-of-type(2) {
+      &.search {
         padding-right: 20px;
         justify-content: flex-end;
         background: $bg;
@@ -265,34 +275,72 @@ h2, h3 {
   }
   &__traffic {
     @include grid(dash-traffic);
-    @extend %dash;
+    & .timeframes {
+      float: right;
+      padding: 0;
+      margin: 0;
+    }
+    & input { // Traffic timeframe items ---------->
+      display: none;
+      &:checked + label {
+        background: $accent;
+        color: #fff;
+      }
+    }
+    & label {
+      display: inline-block;
+      font-family: 'Roboto', sans-serif;
+      font-weight: 500;
+      font-size: .9rem;
+      margin: 0 5px;
+      padding: 5px 10px;
+      border-radius: 12px;
+      &:hover {
+        @extend %hover;
+      }
+    }
   }
   &__daily {
     @include grid(dash-daily);
-    @extend %dash;
   }
   &__mobile {
     @include grid(dash-mobile);
-    @extend %dash;
   }
   &__social {
     @include grid(dash-social);
-    @extend %dash;
   }
   &__members {
     @include grid(dash-members);
-    @extend %dash;
   }
   &__recent {
     @include grid(dash-recent);
-    @extend %dash;
   }
   &__msg {
     @include grid(dash-msg);
-    @extend %dash;
   }
   &__settings {
     @include grid(dash-settings);
-    @extend %dash;
+  }
+}
+
+// Charts
+
+canvas {
+  margin-top: 20px;
+}
+
+%full-width {
+  width: 100%;
+}
+
+.chart {
+  &__traffic {
+    @extend %full-width;
+  }
+  &__daily {
+    @extend %full-width;
+  }
+  &__mobile {
+    @extend %full-width;
   }
 }

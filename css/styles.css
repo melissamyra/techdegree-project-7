@@ -1,5 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,500;1,400;1,500&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,500;1,500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans&display=swap");
 /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
 /* Document
    ========================================================================== */
@@ -386,6 +387,7 @@ body {
 }
 @media (min-width: 768px) {
   .grid-main {
+    width: calc(100vw - 60px);
     grid-template-columns: 1fr 1fr;
     grid-template-areas: "dash-top dash-top" "dash-daily dash-mobile" "dash-social dash-social" "dash-members dash-members" "dash-recent dash-recent" "dash-msg dash-msg" "dash-settings dash-settings";
   }
@@ -396,7 +398,7 @@ body {
   }
 }
 
-.header__user:hover, .header__icon-bell:hover, .header__logo:hover {
+.dashboard__traffic label:hover, .header__user:hover, .header__icon-bell:hover, .header__logo:hover {
   cursor: pointer;
 }
 
@@ -504,22 +506,30 @@ main {
 h2, h3 {
   font-family: "Roboto", sans-serif;
   font-weight: 500;
-  font-size: 0.9rem;
   margin: 0;
+  display: inline-block;
+}
+
+h2 {
+  font-size: 1.1rem;
+}
+
+h3 {
+  text-transform: uppercase;
+  font-size: 0.9rem;
 }
 
 .card {
   background: #fff;
 }
-
-.dashboard__settings, .dashboard__msg, .dashboard__recent, .dashboard__members, .dashboard__social, .dashboard__mobile, .dashboard__daily, .dashboard__traffic {
+.card:not(.dashboard__top) {
   padding: 20px;
 }
 
 .dashboard__top {
   grid-area: dash-top;
   display: grid;
-  grid-template-columns: minmax(min-content, 140px) 1fr;
+  grid-template-columns: minmax(min-content, 125px) 1fr;
   grid-template-rows: 60px 1fr;
   grid-template-areas: "dash-title dash-search" "dash-traffic dash-traffic";
 }
@@ -527,11 +537,11 @@ h2, h3 {
   display: flex;
   align-items: center;
 }
-.dashboard__top div:first-of-type {
+.dashboard__top div.dash-title {
   padding-left: 20px;
   grid-area: dash-title;
 }
-.dashboard__top div:nth-of-type(2) {
+.dashboard__top div.search {
   padding-right: 20px;
   justify-content: flex-end;
   background: #f7f7f7;
@@ -564,6 +574,27 @@ h2, h3 {
 .dashboard__traffic {
   grid-area: dash-traffic;
 }
+.dashboard__traffic .timeframes {
+  float: right;
+  padding: 0;
+  margin: 0;
+}
+.dashboard__traffic input {
+  display: none;
+}
+.dashboard__traffic input:checked + label {
+  background: #5dd2d6;
+  color: #fff;
+}
+.dashboard__traffic label {
+  display: inline-block;
+  font-family: "Roboto", sans-serif;
+  font-weight: 500;
+  font-size: 0.9rem;
+  margin: 0 5px;
+  padding: 5px 10px;
+  border-radius: 12px;
+}
 .dashboard__daily {
   grid-area: dash-daily;
 }
@@ -584,6 +615,14 @@ h2, h3 {
 }
 .dashboard__settings {
   grid-area: dash-settings;
+}
+
+canvas {
+  margin-top: 20px;
+}
+
+.chart__mobile, .chart__daily, .chart__traffic {
+  width: 100%;
 }
 
 /*# sourceMappingURL=styles.css.map */
