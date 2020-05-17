@@ -58,7 +58,7 @@ let trafficChart = new Chart(tChart, {
 });
 
 // Daily Traffic BAR Chart
-let myBarChart = new Chart(dChart, {
+let dailyChart = new Chart(dChart, {
     type: 'bar',
     data: {
       labels: [

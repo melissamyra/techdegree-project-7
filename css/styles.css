@@ -525,6 +525,11 @@ h3 {
 .card:not(.dashboard__top) {
   padding: 20px;
 }
+@media (min-width: 768px) {
+  .card:not(.dashboard__top) {
+    padding: 30px;
+  }
+}
 
 .dashboard__top {
   grid-area: dash-top;
@@ -590,10 +595,11 @@ h3 {
   display: inline-block;
   font-family: "Roboto", sans-serif;
   font-weight: 500;
-  font-size: 0.9rem;
+  font-size: 0.85rem;
   margin: 0 5px;
-  padding: 5px 10px;
+  padding: 5px 15px;
   border-radius: 12px;
+  transition: background 0.2s cubic-bezier(0.87, -0.02, 0.35, 1.18);
 }
 .dashboard__daily {
   grid-area: dash-daily;
@@ -621,7 +627,13 @@ canvas {
   margin-top: 20px;
 }
 
-.chart__mobile, .chart__daily, .chart__traffic {
+.chart__mobile, .chart__daily {
+  width: 95%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.chart__traffic {
   width: 100%;
 }
 

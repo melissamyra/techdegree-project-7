@@ -221,6 +221,9 @@ h3 {
   background: #fff;
   &:not(.dashboard__top) {
     padding: 20px;
+    @include mq(768px) {
+      padding: 30px;
+    }
   }
 }
 
@@ -291,10 +294,11 @@ h3 {
       display: inline-block;
       font-family: 'Roboto', sans-serif;
       font-weight: 500;
-      font-size: .9rem;
+      font-size: .85rem;
       margin: 0 5px;
-      padding: 5px 10px;
+      padding: 5px 15px;
       border-radius: 12px;
+      transition: background .2s cubic-bezier(.87,-0.02,.35,1.18);
       &:hover {
         @extend %hover;
       }
@@ -330,12 +334,14 @@ canvas {
 }
 
 %full-width {
-  width: 100%;
+  width: 95%;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .chart {
   &__traffic {
-    @extend %full-width;
+    width: 100%;
   }
   &__daily {
     @extend %full-width;
