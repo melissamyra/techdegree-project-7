@@ -9,23 +9,34 @@ Chart.defaults.global.defaultFontColor = '#8a8a8a';
 
 
 // Data Sets ==========================>
-let monthlyTraffic = {
-    backgroundColor: 'rgba(67, 139, 129, 0.2)',
-    lineTension: 0,
-    borderColor: '#5dd2d6',
-    pointRadius: 4.5,
-    pointBackgroundColor: '#fff',
-    borderJoinStyle: 'miter',
-    borderWidth: 1,
-    hoverBorderWidth: 2,
-    hoverBorderColor: '#009d9d',
-    data: [
-      1000, 1500,
-      1250, 1750,
-      2000, 1500,
-      1500, 1000,
-      1750, 2250],
-};
+let monthlyTraffic = [
+  1000, 1500,
+  1250, 1750,
+  2000, 1500,
+  1500, 1000,
+  1750, 2250];
+
+let weeklyTraffic = [
+  102, 245,
+  425, 144,
+  200, 150,
+  150, 100,
+  550, 750];
+
+let dailyTraffic = [
+  45, 53,
+  45, 40,
+  85, 74,
+  68, 95,
+  54, 55];
+
+let hourlyTraffic = [
+  20, 15,
+  12, 17,
+  26, 15,
+  15, 19,
+  17, 22];
+
 
 
 // Traffic LINE Chart ==================>
@@ -38,7 +49,18 @@ let trafficChart = new Chart(tChart, {
           '13-19', '20-26',
           '27-3', '4-10',
           '11-17', '18-24'],
-        datasets: [monthlyTraffic]
+        datasets: [{
+            backgroundColor: 'rgba(67, 139, 129, 0.2)',
+            lineTension: 0,
+            borderColor: '#5dd2d6',
+            pointRadius: 4.5,
+            pointBackgroundColor: '#fff',
+            borderJoinStyle: 'miter',
+            borderWidth: 1,
+            hoverBorderWidth: 2,
+            hoverBorderColor: '#009d9d',
+            data: monthlyTraffic,
+        }]
     },
             options: {
               legend: {
