@@ -340,6 +340,16 @@ template {
   display: none;
 }
 
+.alert .close:hover, .dashboard__traffic label:hover, .header__user:hover, .header__icon-bell:hover, .header__logo:hover {
+  cursor: pointer;
+}
+
+.chart__mobile, .chart__daily {
+  width: 95%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 @keyframes shake {
   20% {
     transform: scale(1.1);
@@ -352,6 +362,35 @@ template {
   }
   100% {
     transform: rotate(0) scale(1);
+  }
+}
+@keyframes slideDown {
+  0% {
+    height: 0px;
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+  100% {
+    height: 34px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    visibility: visible;
+    margin: 0 0 20px;
+  }
+}
+@keyframes slideUp {
+  0% {
+    height: 34px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    visibility: visible;
+    margin: 0 0 20px;
+  }
+  100% {
+    height: 0px;
+    padding-top: 0;
+    padding-bottom: 0;
+    display: none;
   }
 }
 * {
@@ -396,10 +435,6 @@ body {
   .grid-main {
     grid-template-areas: "dash-top dash-top" "dash-daily dash-mobile" "dash-social dash-social" "dash-members dash-recent" "dash-msg dash-settings";
   }
-}
-
-.dashboard__traffic label:hover, .header__user:hover, .header__icon-bell:hover, .header__logo:hover {
-  cursor: pointer;
 }
 
 .header {
@@ -582,7 +617,7 @@ h3 {
 .dashboard__traffic .timeframes {
   float: right;
   padding: 0;
-  margin: 0;
+  margin: 20px 0 0;
 }
 .dashboard__traffic input {
   display: none;
@@ -623,14 +658,33 @@ h3 {
   grid-area: dash-settings;
 }
 
+.alert {
+  background: #5dd2d6;
+  visibility: hidden;
+  margin: 0;
+  padding-left: 15px;
+  padding-right: 15px;
+  color: #fff;
+  font-size: 0.8rem;
+  border-radius: 2px;
+  animation: slideDown 0.8s 1s forwards;
+  overflow: hidden;
+  position: relative;
+}
+.alert strong {
+  margin-right: 2px;
+}
+.alert .close {
+  background: url(../icons/close.png);
+  background-size: contain;
+  width: 10px;
+  height: 10px;
+  position: absolute;
+  top: 13px;
+  right: 13px;
+}
 canvas {
   margin-top: 20px;
-}
-
-.chart__mobile, .chart__daily {
-  width: 95%;
-  margin-left: auto;
-  margin-right: auto;
 }
 
 .chart__traffic {

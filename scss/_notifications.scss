@@ -1,0 +1,29 @@
+// Alert ------------------>
+.alert {
+  background: $accent;
+  visibility: hidden;
+  margin: 0;
+  padding-left: 15px;
+  padding-right: 15px;
+  color: #fff;
+  font-size: .8rem;
+  border-radius: 2px;
+  animation: slideDown .8s 1s forwards;
+  overflow: hidden;
+  position: relative;
+  & strong {
+    margin-right: 2px;
+  }
+  .close {
+    background: url(../icons/close.png);
+    background-size: contain;
+    width: 10px;
+    height: 10px;
+    position: absolute;
+    top: 13px;
+    right: 13px;
+    &:hover {
+      @extend %hover;
+    }
+  }
+}

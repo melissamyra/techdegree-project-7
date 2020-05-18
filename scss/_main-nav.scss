@@ -1,0 +1,31 @@
+//nav bar ----------------->
+.nav {
+  @include grid(nav);
+  background: $accent;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  bottom: 0;
+  height: 55px;
+  width: 100%;
+  @include mq(768px) {
+    position: fixed;
+    z-index: 10;
+    height: calc(100% - 60px);
+    width: 60px;
+    left: 0;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding-top: 50px;
+  }
+  & a {
+    margin: 0 15px;
+    @include mq(768px) {
+      margin-bottom: 30px;
+    }
+  }
+  &__icon {
+    width: 22px;
+  }
+}

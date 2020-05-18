@@ -79,7 +79,7 @@ let trafficChart = new Chart(tChart, {
             }
 });
 
-// Daily Traffic BAR Chart
+// Daily Traffic BAR Chart ==================>
 let dailyChart = new Chart(dChart, {
     type: 'bar',
     data: {
@@ -109,7 +109,7 @@ let dailyChart = new Chart(dChart, {
     }
 });
 
-// Mobile DOUGHNUT Chart
+// Mobile DOUGHNUT Chart ==================>
 var mobileChart = new Chart(mChart, {
     type: 'doughnut',
     data: {

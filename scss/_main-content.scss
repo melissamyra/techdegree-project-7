@@ -1,0 +1,132 @@
+// Main Content ----------------->
+
+main {
+  @include grid(main);
+  color: #535353;
+}
+
+h2, h3 {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 500;
+  margin: 0;
+  display: inline-block;
+}
+
+h2 {
+  font-size: 1.1rem;
+}
+
+h3 {
+  text-transform: uppercase;
+  font-size: .9rem;
+}
+
+.card {
+  background: #fff;
+  &:not(.dashboard__top) {
+    padding: 20px;
+    @include mq(768px) {
+      padding: 30px;
+    }
+  }
+}
+
+.dashboard {
+  &__top {
+    @include grid(dash-top);
+    display: grid;
+    grid-template-columns: minmax(min-content,125px) 1fr;
+    grid-template-rows: 60px 1fr;
+    grid-template-areas:
+      "dash-title dash-search"
+      "dash-traffic dash-traffic";
+    & div {
+      display: flex;
+      align-items: center;
+      &.dash-title {
+        padding-left: 20px;
+        @include grid(dash-title);
+      }
+      &.search {
+        padding-right: 20px;
+        justify-content: flex-end;
+        background: $bg;
+        @include grid(dash-search);
+      }
+    }
+    &-search {
+      border: 1px solid #e3e3e3;
+      outline: none;
+      font-size: .9rem;
+      background-image: url(../icons/search.png);
+      background-position: 95% 50%;
+      background-repeat: no-repeat;
+      padding: 0 10px;
+      height: 35px;
+      width: 50%;
+      min-width: 100px;
+      max-width: 380px;
+      border-radius: 3px;
+      transition: width .2s ease-out,
+                  border .2s ease-out;
+      &::placeholder {
+        font-style: italic;
+        opacity: 0;
+      }
+      &:focus {
+        width: 70%;
+        background-image: none;
+        border: 2px solid $accent;
+      }
+    }
+  }
+  &__traffic {
+    @include grid(dash-traffic);
+    & .timeframes {
+      float: right;
+      padding: 0;
+      margin: 20px 0 0;
+    }
+    & input { // Traffic timeframe items ---------->
+      display: none;
+      &:checked + label {
+        background: $accent;
+        color: #fff;
+      }
+    }
+    & label {
+      display: inline-block;
+      font-family: 'Roboto', sans-serif;
+      font-weight: 500;
+      font-size: .85rem;
+      margin: 0 5px;
+      padding: 5px 15px;
+      border-radius: 12px;
+      transition: background .2s cubic-bezier(.87,-0.02,.35,1.18);
+      &:hover {
+        @extend %hover;
+      }
+    }
+  }
+  &__daily {
+    @include grid(dash-daily);
+  }
+  &__mobile {
+    @include grid(dash-mobile);
+  }
+  &__social {
+    @include grid(dash-social);
+  }
+  &__members {
+    @include grid(dash-members);
+  }
+  &__recent {
+    @include grid(dash-recent);
+  }
+  &__msg {
+    @include grid(dash-msg);
+  }
+  &__settings {
+    @include grid(dash-settings);
+  }
+}
