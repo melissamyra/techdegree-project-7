@@ -1,15 +1,32 @@
 // Traffic Section Buttons ----------------------------------->
 const trafficTimeframes = document.querySelector('.timeframes');
 
-// notifications --------------------------------------------->
+// Alert --------------------------------------------->
+const trafficHeading = document.querySelector('.dashboard__traffic h3');
+const alert = document.createElement('P');
+
+// Notifications --------------------------------------------->
 const bell = document.querySelector('.header__icon-bell');
 let notifications = document.querySelector('.notifications');
+
+// Settings -------------------------------------------------->
+const settingsSection = document.getElementById('dash-settings')
+const switchButtons = document.querySelectorAll('.switch');
+const switchCircles = document.querySelectorAll('.switch-circle');
+
+
+
 
 // Functions =================================================>
 
 // change chart data
 const setChartData = (chart,data) => {
   chart.data.datasets[0].data = data;
+}
+
+// alert pop up
+const alertPopUp = () => {
+  trafficHeading.parentNode.insertBefore(alert, trafficHeading);
 }
 
 // add notification
@@ -19,9 +36,9 @@ const addNotification = (text) => {
   notifications.appendChild(ping);
 }
 
-// ============================================================
+// =================================================================================
 //                       * LISTENERS *
-//=============================================================
+//==================================================================================
 
 // Chart Data ================================================>
 trafficTimeframes.addEventListener('click', (e) => {
@@ -40,13 +57,6 @@ trafficTimeframes.addEventListener('click', (e) => {
 });
 
 // Alert =====================================================>
-const trafficHeading = document.querySelector('.dashboard__traffic h3');
-const alert = document.createElement('P');
-
-const alertPopUp = () => {
-  trafficHeading.parentNode.insertBefore(alert, trafficHeading);
-}
-
 alert.className = 'alert';
 alert.innerHTML = '<strong>Alert</strong> You have several new notifications!<div class="close"></div>';
 
@@ -78,7 +88,7 @@ alert.addEventListener('click', (e) => {
 
 });
 
-// notifications =============================================>
+// Notifications =============================================>
 
 // listen to bell click
 bell.addEventListener('click', () => {
@@ -108,6 +118,34 @@ notifications.addEventListener('click', (e) => {
   // if no notifications, hide menu
   if (notifications.childNodes.length < 1) {
     notifications.style.display = 'none';
+  }
+
+});
+
+// Settings =============================================>
+
+// listen to settings section
+settingsSection.addEventListener('click', (e) => {
+
+  if (e.target.className === 'switch-circle') {
+    let button = e.target;
+    if (button.previousElementSibling.previousElementSibling.checked === false) {
+      button.previousElementSibling.previousElementSibling.checked = true;
+      button.parentNode.style.background = '#f3f3f3';
+    } else {
+      button.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.checked = true;
+      button.parentNode.style.background = '';
+    }
+  }
+
+  if (e.target.tagName === 'LABEL') {
+    let button = e.target;
+    if (button.parentNode.style.background === '') {
+      button.parentNode.style.background = '#f3f3f3';
+    } else {
+      button.parentNode.style.background = '';
+    }
+
   }
 
 });

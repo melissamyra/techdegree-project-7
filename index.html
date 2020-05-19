@@ -218,11 +218,37 @@
           <!-- Message User Section -->
           <section class="card dashboard__msg">
             <h3>Message User</h3>
+            <form method="post">
+              <input type="text" name="user_name" value="" placeholder="Search for User">
+              <textarea name="message" placeholder="Message for User"></textarea>
+              <button type="submit" name="button_submit">Send</button>
+            </form>
           </section>
 
           <!-- Settings Section -->
           <section class="card dashboard__settings" id="dash-settings">
             <h3>Settings</h3>
+            <div class="dashboard__settings-item">
+              <p>Send Email notifications</p>
+              <div class="switch">
+                <input type="radio" name="email_settings_switch" id="email_on" checked>
+                <label for="email_on" class="on">OFF</label>
+                <input type="radio" name="email_settings_switch" id="email_off">
+                <label for="email_off" class="off">ON</label>
+                <div class="switch-circle"></div>
+              </div>
+            </div> <!-- dashboard settings item -->
+
+            <div class="dashboard__settings-item">
+              <p>Set Profile to Public</p>
+              <div class="switch">
+                <input type="radio" name="privacy_settings_switch" id="public_on" checked>
+                <label for="public_on" class="on">OFF</label>
+                <input type="radio" name="privacy_settings_switch" id="public_off">
+                <label for="public_off" class="off">ON</label>
+                <div class="switch-circle"></div>
+              </div>
+            </div>  <!-- dashboard settings item -->
           </section>
 
         </div> <!-- grid-main end -->

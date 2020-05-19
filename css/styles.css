@@ -375,7 +375,7 @@ template {
 }
 
 /* line 6, C:/Users/Mel/Documents/GitHub/techdegree-project-7/scss/_variables.scss */
-.header__logo:hover, .header__icon-bell:hover, .header__user:hover, .dashboard__traffic label:hover, .dashboard__members img:hover, .dashboard__members-name:hover, .dashboard__recent img:hover, .dashboard__recent-text:hover, .close:hover {
+.header__logo:hover, .header__icon-bell:hover, .header__user:hover, .dashboard__traffic label:hover, .dashboard__members img:hover, .dashboard__members-name:hover, .dashboard__recent img:hover, .dashboard__recent-text:hover, .dashboard__settings .switch-circle:hover, .dashboard__settings label:hover, .close:hover {
   cursor: pointer;
 }
 
@@ -630,9 +630,10 @@ main {
   grid-area: main;
   color: #535353;
   width: 100%;
+  height: 100%;
 }
 
-/* line 9, C:/Users/Mel/Documents/GitHub/techdegree-project-7/scss/_main-content.scss */
+/* line 10, C:/Users/Mel/Documents/GitHub/techdegree-project-7/scss/_main-content.scss */
 h2, h3 {
   font-family: 'Roboto', sans-serif;
   font-weight: 500;
@@ -640,35 +641,35 @@ h2, h3 {
   display: inline-block;
 }
 
-/* line 16, C:/Users/Mel/Documents/GitHub/techdegree-project-7/scss/_main-content.scss */
+/* line 17, C:/Users/Mel/Documents/GitHub/techdegree-project-7/scss/_main-content.scss */
 h2 {
   font-size: 1.1rem;
 }
 
-/* line 20, C:/Users/Mel/Documents/GitHub/techdegree-project-7/scss/_main-content.scss */
+/* line 21, C:/Users/Mel/Documents/GitHub/techdegree-project-7/scss/_main-content.scss */
 h3 {
   text-transform: uppercase;
   font-size: .9rem;
 }
 
-/* line 26, C:/Users/Mel/Documents/GitHub/techdegree-project-7/scss/_main-content.scss */
+/* line 27, C:/Users/Mel/Documents/GitHub/techdegree-project-7/scss/_main-content.scss */
 .card {
   background: #fff;
 }
 
-/* line 28, C:/Users/Mel/Documents/GitHub/techdegree-project-7/scss/_main-content.scss */
+/* line 29, C:/Users/Mel/Documents/GitHub/techdegree-project-7/scss/_main-content.scss */
 .card:not(.dashboard__top) {
   padding: 20px;
 }
 
 @media (min-width: 768px) {
-  /* line 28, C:/Users/Mel/Documents/GitHub/techdegree-project-7/scss/_main-content.scss */
+  /* line 29, C:/Users/Mel/Documents/GitHub/techdegree-project-7/scss/_main-content.scss */
   .card:not(.dashboard__top) {
     padding: 30px;
   }
 }
 
-/* line 37, C:/Users/Mel/Documents/GitHub/techdegree-project-7/scss/_main-content.scss */
+/* line 38, C:/Users/Mel/Documents/GitHub/techdegree-project-7/scss/_main-content.scss */
 .dashboard__top {
   grid-area: dash-top;
   display: grid;
@@ -677,19 +678,19 @@ h3 {
   grid-template-areas: "dash-title dash-search" "dash-traffic dash-traffic";
 }
 
-/* line 45, C:/Users/Mel/Documents/GitHub/techdegree-project-7/scss/_main-content.scss */
+/* line 46, C:/Users/Mel/Documents/GitHub/techdegree-project-7/scss/_main-content.scss */
 .dashboard__top div {
   display: flex;
   align-items: center;
 }
 
-/* line 48, C:/Users/Mel/Documents/GitHub/techdegree-project-7/scss/_main-content.scss */
+/* line 49, C:/Users/Mel/Documents/GitHub/techdegree-project-7/scss/_main-content.scss */
 .dashboard__top div.dash-title {
   padding-left: 20px;
   grid-area: dash-title;
 }
 
-/* line 52, C:/Users/Mel/Documents/GitHub/techdegree-project-7/scss/_main-content.scss */
+/* line 53, C:/Users/Mel/Documents/GitHub/techdegree-project-7/scss/_main-content.scss */
 .dashboard__top div.search {
   padding-right: 20px;
   justify-content: flex-end;
@@ -697,7 +698,7 @@ h3 {
   grid-area: dash-search;
 }
 
-/* line 59, C:/Users/Mel/Documents/GitHub/techdegree-project-7/scss/_main-content.scss */
+/* line 60, C:/Users/Mel/Documents/GitHub/techdegree-project-7/scss/_main-content.scss */
 .dashboard__top-search {
   border: 1px solid #e3e3e3;
   outline: none;
@@ -714,48 +715,48 @@ h3 {
   transition: width .2s ease-out, border .2s ease-out;
 }
 
-/* line 74, C:/Users/Mel/Documents/GitHub/techdegree-project-7/scss/_main-content.scss */
+/* line 75, C:/Users/Mel/Documents/GitHub/techdegree-project-7/scss/_main-content.scss */
 .dashboard__top-search::placeholder {
   font-style: italic;
   opacity: 0;
 }
 
-/* line 78, C:/Users/Mel/Documents/GitHub/techdegree-project-7/scss/_main-content.scss */
+/* line 79, C:/Users/Mel/Documents/GitHub/techdegree-project-7/scss/_main-content.scss */
 .dashboard__top-search:focus {
   width: 70%;
   background-image: none;
   border: 2px solid #5dd2d6;
 }
 
-/* line 85, C:/Users/Mel/Documents/GitHub/techdegree-project-7/scss/_main-content.scss */
+/* line 86, C:/Users/Mel/Documents/GitHub/techdegree-project-7/scss/_main-content.scss */
 .dashboard__traffic {
   grid-area: dash-traffic;
 }
 
-/* line 87, C:/Users/Mel/Documents/GitHub/techdegree-project-7/scss/_main-content.scss */
+/* line 88, C:/Users/Mel/Documents/GitHub/techdegree-project-7/scss/_main-content.scss */
 .dashboard__traffic h3 {
   padding-top: 5px;
 }
 
-/* line 90, C:/Users/Mel/Documents/GitHub/techdegree-project-7/scss/_main-content.scss */
+/* line 91, C:/Users/Mel/Documents/GitHub/techdegree-project-7/scss/_main-content.scss */
 .dashboard__traffic .timeframes {
   padding: 0;
   margin: 0;
   float: right;
 }
 
-/* line 95, C:/Users/Mel/Documents/GitHub/techdegree-project-7/scss/_main-content.scss */
+/* line 96, C:/Users/Mel/Documents/GitHub/techdegree-project-7/scss/_main-content.scss */
 .dashboard__traffic input {
   display: none;
 }
 
-/* line 97, C:/Users/Mel/Documents/GitHub/techdegree-project-7/scss/_main-content.scss */
+/* line 98, C:/Users/Mel/Documents/GitHub/techdegree-project-7/scss/_main-content.scss */
 .dashboard__traffic input:checked + label {
   background: #5dd2d6;
   color: #fff;
 }
 
-/* line 102, C:/Users/Mel/Documents/GitHub/techdegree-project-7/scss/_main-content.scss */
+/* line 103, C:/Users/Mel/Documents/GitHub/techdegree-project-7/scss/_main-content.scss */
 .dashboard__traffic label {
   display: inline-block;
   font-family: 'Roboto', sans-serif;
@@ -767,27 +768,27 @@ h3 {
   transition: background 0.2s cubic-bezier(0.87, -0.02, 0.35, 1.18);
 }
 
-/* line 111, C:/Users/Mel/Documents/GitHub/techdegree-project-7/scss/_main-content.scss */
+/* line 112, C:/Users/Mel/Documents/GitHub/techdegree-project-7/scss/_main-content.scss */
 .dashboard__traffic label:hover {
   color: #5dd2d6;
 }
 
-/* line 117, C:/Users/Mel/Documents/GitHub/techdegree-project-7/scss/_main-content.scss */
+/* line 118, C:/Users/Mel/Documents/GitHub/techdegree-project-7/scss/_main-content.scss */
 .dashboard__daily {
   grid-area: dash-daily;
 }
 
-/* line 120, C:/Users/Mel/Documents/GitHub/techdegree-project-7/scss/_main-content.scss */
+/* line 121, C:/Users/Mel/Documents/GitHub/techdegree-project-7/scss/_main-content.scss */
 .dashboard__mobile {
   grid-area: dash-mobile;
 }
 
-/* line 123, C:/Users/Mel/Documents/GitHub/techdegree-project-7/scss/_main-content.scss */
+/* line 124, C:/Users/Mel/Documents/GitHub/techdegree-project-7/scss/_main-content.scss */
 .dashboard__social {
   grid-area: dash-social;
 }
 
-/* line 125, C:/Users/Mel/Documents/GitHub/techdegree-project-7/scss/_main-content.scss */
+/* line 126, C:/Users/Mel/Documents/GitHub/techdegree-project-7/scss/_main-content.scss */
 .dashboard__social .wrapper {
   padding: 10px;
   border: 1px solid #dfdfdf;
@@ -802,14 +803,14 @@ h3 {
 }
 
 @media (min-width: 768px) {
-  /* line 125, C:/Users/Mel/Documents/GitHub/techdegree-project-7/scss/_main-content.scss */
+  /* line 126, C:/Users/Mel/Documents/GitHub/techdegree-project-7/scss/_main-content.scss */
   .dashboard__social .wrapper {
     padding: 20px;
   }
 }
 
 @media (min-width: 1024px) {
-  /* line 125, C:/Users/Mel/Documents/GitHub/techdegree-project-7/scss/_main-content.scss */
+  /* line 126, C:/Users/Mel/Documents/GitHub/techdegree-project-7/scss/_main-content.scss */
   .dashboard__social .wrapper {
     display: grid;
     grid-template-columns: 1fr 1.5fr;
@@ -820,7 +821,7 @@ h3 {
   }
 }
 
-/* line 150, C:/Users/Mel/Documents/GitHub/techdegree-project-7/scss/_main-content.scss */
+/* line 151, C:/Users/Mel/Documents/GitHub/techdegree-project-7/scss/_main-content.scss */
 .dashboard__social-items {
   width: 100%;
   display: flex;
@@ -828,7 +829,7 @@ h3 {
   padding: 20px 0;
 }
 
-/* line 156, C:/Users/Mel/Documents/GitHub/techdegree-project-7/scss/_main-content.scss */
+/* line 157, C:/Users/Mel/Documents/GitHub/techdegree-project-7/scss/_main-content.scss */
 .dashboard__social .icon {
   background: #32bfc4;
   border-radius: 50%;
@@ -842,7 +843,7 @@ h3 {
 }
 
 @media (min-width: 768px) {
-  /* line 156, C:/Users/Mel/Documents/GitHub/techdegree-project-7/scss/_main-content.scss */
+  /* line 157, C:/Users/Mel/Documents/GitHub/techdegree-project-7/scss/_main-content.scss */
   .dashboard__social .icon {
     width: 65px;
     height: 65px;
@@ -850,29 +851,29 @@ h3 {
 }
 
 @media (min-width: 1024px) {
-  /* line 156, C:/Users/Mel/Documents/GitHub/techdegree-project-7/scss/_main-content.scss */
+  /* line 157, C:/Users/Mel/Documents/GitHub/techdegree-project-7/scss/_main-content.scss */
   .dashboard__social .icon {
     width: 80px;
     height: 80px;
   }
 }
 
-/* line 174, C:/Users/Mel/Documents/GitHub/techdegree-project-7/scss/_main-content.scss */
+/* line 175, C:/Users/Mel/Documents/GitHub/techdegree-project-7/scss/_main-content.scss */
 .dashboard__social .icon.twitter svg {
   transform: translateY(3px);
 }
 
-/* line 177, C:/Users/Mel/Documents/GitHub/techdegree-project-7/scss/_main-content.scss */
+/* line 178, C:/Users/Mel/Documents/GitHub/techdegree-project-7/scss/_main-content.scss */
 .dashboard__social .icon.facebook svg {
   transform: scale(1.1) translateY(-1px);
 }
 
-/* line 180, C:/Users/Mel/Documents/GitHub/techdegree-project-7/scss/_main-content.scss */
+/* line 181, C:/Users/Mel/Documents/GitHub/techdegree-project-7/scss/_main-content.scss */
 .dashboard__social .icon.googleplus svg {
   transform: translateY(2px) scale(0.9);
 }
 
-/* line 184, C:/Users/Mel/Documents/GitHub/techdegree-project-7/scss/_main-content.scss */
+/* line 185, C:/Users/Mel/Documents/GitHub/techdegree-project-7/scss/_main-content.scss */
 .dashboard__social svg {
   fill: #fff;
   width: 30px;
@@ -882,7 +883,7 @@ h3 {
 }
 
 @media (min-width: 768px) {
-  /* line 184, C:/Users/Mel/Documents/GitHub/techdegree-project-7/scss/_main-content.scss */
+  /* line 185, C:/Users/Mel/Documents/GitHub/techdegree-project-7/scss/_main-content.scss */
   .dashboard__social svg {
     width: 35px;
     height: 35px;
@@ -890,14 +891,14 @@ h3 {
 }
 
 @media (min-width: 1024px) {
-  /* line 184, C:/Users/Mel/Documents/GitHub/techdegree-project-7/scss/_main-content.scss */
+  /* line 185, C:/Users/Mel/Documents/GitHub/techdegree-project-7/scss/_main-content.scss */
   .dashboard__social svg {
     width: 40px;
     height: 40px;
   }
 }
 
-/* line 199, C:/Users/Mel/Documents/GitHub/techdegree-project-7/scss/_main-content.scss */
+/* line 200, C:/Users/Mel/Documents/GitHub/techdegree-project-7/scss/_main-content.scss */
 .dashboard__social h4 {
   margin: 0;
   color: #5dd2d6;
@@ -908,21 +909,21 @@ h3 {
 }
 
 @media (min-width: 768px) {
-  /* line 199, C:/Users/Mel/Documents/GitHub/techdegree-project-7/scss/_main-content.scss */
+  /* line 200, C:/Users/Mel/Documents/GitHub/techdegree-project-7/scss/_main-content.scss */
   .dashboard__social h4 {
     display: inline-block;
   }
 }
 
 @media (min-width: 1024px) {
-  /* line 199, C:/Users/Mel/Documents/GitHub/techdegree-project-7/scss/_main-content.scss */
+  /* line 200, C:/Users/Mel/Documents/GitHub/techdegree-project-7/scss/_main-content.scss */
   .dashboard__social h4 {
     font-size: 1rem;
     align-self: flex-end;
   }
 }
 
-/* line 214, C:/Users/Mel/Documents/GitHub/techdegree-project-7/scss/_main-content.scss */
+/* line 215, C:/Users/Mel/Documents/GitHub/techdegree-project-7/scss/_main-content.scss */
 .dashboard__social span {
   margin: 0 0 auto;
   font-size: 1.2rem;
@@ -932,25 +933,25 @@ h3 {
 }
 
 @media (min-width: 768px) {
-  /* line 214, C:/Users/Mel/Documents/GitHub/techdegree-project-7/scss/_main-content.scss */
+  /* line 215, C:/Users/Mel/Documents/GitHub/techdegree-project-7/scss/_main-content.scss */
   .dashboard__social span {
     font-size: 1.9rem;
   }
 }
 
 @media (min-width: 1024px) {
-  /* line 214, C:/Users/Mel/Documents/GitHub/techdegree-project-7/scss/_main-content.scss */
+  /* line 215, C:/Users/Mel/Documents/GitHub/techdegree-project-7/scss/_main-content.scss */
   .dashboard__social span {
     font-size: 3rem;
   }
 }
 
-/* line 228, C:/Users/Mel/Documents/GitHub/techdegree-project-7/scss/_main-content.scss */
+/* line 229, C:/Users/Mel/Documents/GitHub/techdegree-project-7/scss/_main-content.scss */
 .dashboard__members {
   grid-area: dash-members;
 }
 
-/* line 230, C:/Users/Mel/Documents/GitHub/techdegree-project-7/scss/_main-content.scss */
+/* line 231, C:/Users/Mel/Documents/GitHub/techdegree-project-7/scss/_main-content.scss */
 .dashboard__members-item {
   display: flex;
   width: 100%;
@@ -959,17 +960,17 @@ h3 {
   align-items: center;
 }
 
-/* line 236, C:/Users/Mel/Documents/GitHub/techdegree-project-7/scss/_main-content.scss */
+/* line 237, C:/Users/Mel/Documents/GitHub/techdegree-project-7/scss/_main-content.scss */
 .dashboard__members-item:first-of-type {
   margin-top: 20px;
 }
 
-/* line 239, C:/Users/Mel/Documents/GitHub/techdegree-project-7/scss/_main-content.scss */
+/* line 240, C:/Users/Mel/Documents/GitHub/techdegree-project-7/scss/_main-content.scss */
 .dashboard__members-item:not(:last-of-type) {
   border-bottom: 1px solid #f3f3f3;
 }
 
-/* line 243, C:/Users/Mel/Documents/GitHub/techdegree-project-7/scss/_main-content.scss */
+/* line 244, C:/Users/Mel/Documents/GitHub/techdegree-project-7/scss/_main-content.scss */
 .dashboard__members img {
   width: 40px;
   height: 40px;
@@ -977,32 +978,40 @@ h3 {
   margin-right: 15px;
 }
 
-/* line 252, C:/Users/Mel/Documents/GitHub/techdegree-project-7/scss/_main-content.scss */
+/* line 253, C:/Users/Mel/Documents/GitHub/techdegree-project-7/scss/_main-content.scss */
 .dashboard__members-name {
   color: gray;
   font-size: .9rem;
 }
 
-/* line 259, C:/Users/Mel/Documents/GitHub/techdegree-project-7/scss/_main-content.scss */
+/* line 260, C:/Users/Mel/Documents/GitHub/techdegree-project-7/scss/_main-content.scss */
 .dashboard__members-email {
   margin: 0;
   color: #32bfc4;
   font-size: .8rem;
+  display: none;
 }
 
-/* line 264, C:/Users/Mel/Documents/GitHub/techdegree-project-7/scss/_main-content.scss */
+@media (min-width: 768px) {
+  /* line 260, C:/Users/Mel/Documents/GitHub/techdegree-project-7/scss/_main-content.scss */
+  .dashboard__members-email {
+    display: block;
+  }
+}
+
+/* line 269, C:/Users/Mel/Documents/GitHub/techdegree-project-7/scss/_main-content.scss */
 .dashboard__members .date {
   margin-left: auto;
   color: gray;
   font-size: .9rem;
 }
 
-/* line 270, C:/Users/Mel/Documents/GitHub/techdegree-project-7/scss/_main-content.scss */
+/* line 275, C:/Users/Mel/Documents/GitHub/techdegree-project-7/scss/_main-content.scss */
 .dashboard__recent {
   grid-area: dash-recent;
 }
 
-/* line 272, C:/Users/Mel/Documents/GitHub/techdegree-project-7/scss/_main-content.scss */
+/* line 277, C:/Users/Mel/Documents/GitHub/techdegree-project-7/scss/_main-content.scss */
 .dashboard__recent-item {
   display: flex;
   width: 100%;
@@ -1011,17 +1020,17 @@ h3 {
   align-items: center;
 }
 
-/* line 278, C:/Users/Mel/Documents/GitHub/techdegree-project-7/scss/_main-content.scss */
+/* line 283, C:/Users/Mel/Documents/GitHub/techdegree-project-7/scss/_main-content.scss */
 .dashboard__recent-item:first-of-type {
   margin-top: 20px;
 }
 
-/* line 281, C:/Users/Mel/Documents/GitHub/techdegree-project-7/scss/_main-content.scss */
+/* line 286, C:/Users/Mel/Documents/GitHub/techdegree-project-7/scss/_main-content.scss */
 .dashboard__recent-item:not(:last-of-type) {
   border-bottom: 1px solid #f3f3f3;
 }
 
-/* line 285, C:/Users/Mel/Documents/GitHub/techdegree-project-7/scss/_main-content.scss */
+/* line 290, C:/Users/Mel/Documents/GitHub/techdegree-project-7/scss/_main-content.scss */
 .dashboard__recent img {
   width: 40px;
   height: 40px;
@@ -1029,39 +1038,183 @@ h3 {
   margin-right: 15px;
 }
 
-/* line 294, C:/Users/Mel/Documents/GitHub/techdegree-project-7/scss/_main-content.scss */
+/* line 299, C:/Users/Mel/Documents/GitHub/techdegree-project-7/scss/_main-content.scss */
 .dashboard__recent-text {
   color: gray;
   font-size: .9rem;
+  margin-right: 20px;
 }
 
-/* line 301, C:/Users/Mel/Documents/GitHub/techdegree-project-7/scss/_main-content.scss */
+/* line 307, C:/Users/Mel/Documents/GitHub/techdegree-project-7/scss/_main-content.scss */
 .dashboard__recent-date {
   margin: 0;
   color: silver;
   font-size: .8rem;
 }
 
-/* line 306, C:/Users/Mel/Documents/GitHub/techdegree-project-7/scss/_main-content.scss */
+/* line 312, C:/Users/Mel/Documents/GitHub/techdegree-project-7/scss/_main-content.scss */
 .dashboard__recent svg {
   width: 15px;
   height: 15px;
   margin-left: auto;
 }
 
-/* line 311, C:/Users/Mel/Documents/GitHub/techdegree-project-7/scss/_main-content.scss */
+/* line 317, C:/Users/Mel/Documents/GitHub/techdegree-project-7/scss/_main-content.scss */
 .dashboard__recent .arrow {
   fill: #49ccd1;
 }
 
-/* line 315, C:/Users/Mel/Documents/GitHub/techdegree-project-7/scss/_main-content.scss */
+/* line 321, C:/Users/Mel/Documents/GitHub/techdegree-project-7/scss/_main-content.scss */
 .dashboard__msg {
   grid-area: dash-msg;
 }
 
-/* line 318, C:/Users/Mel/Documents/GitHub/techdegree-project-7/scss/_main-content.scss */
+/* line 323, C:/Users/Mel/Documents/GitHub/techdegree-project-7/scss/_main-content.scss */
+.dashboard__msg form {
+  display: flex;
+  flex-direction: column;
+  margin-top: 20px;
+}
+
+/* line 328, C:/Users/Mel/Documents/GitHub/techdegree-project-7/scss/_main-content.scss */
+.dashboard__msg input, .dashboard__msg textarea {
+  outline: none;
+  border: 2px solid #f3f3f3;
+  margin-bottom: 15px;
+  border-radius: 3px;
+  padding: 10px;
+  font-size: .9rem;
+}
+
+/* line 335, C:/Users/Mel/Documents/GitHub/techdegree-project-7/scss/_main-content.scss */
+.dashboard__msg input::placeholder, .dashboard__msg textarea::placeholder {
+  color: #dadada;
+}
+
+/* line 339, C:/Users/Mel/Documents/GitHub/techdegree-project-7/scss/_main-content.scss */
+.dashboard__msg input {
+  height: 40px;
+}
+
+/* line 342, C:/Users/Mel/Documents/GitHub/techdegree-project-7/scss/_main-content.scss */
+.dashboard__msg textarea {
+  height: 150px;
+  resize: none;
+}
+
+/* line 346, C:/Users/Mel/Documents/GitHub/techdegree-project-7/scss/_main-content.scss */
+.dashboard__msg button {
+  outline: none;
+  border: none;
+  padding: 15px 0;
+  color: #fff;
+  font-size: .9rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  background: #71d8db;
+  transition: background .2s ease-out;
+}
+
+/* line 356, C:/Users/Mel/Documents/GitHub/techdegree-project-7/scss/_main-content.scss */
+.dashboard__msg button:active {
+  background: #49ccd1;
+}
+
+/* line 361, C:/Users/Mel/Documents/GitHub/techdegree-project-7/scss/_main-content.scss */
 .dashboard__settings {
   grid-area: dash-settings;
+}
+
+/* line 363, C:/Users/Mel/Documents/GitHub/techdegree-project-7/scss/_main-content.scss */
+.dashboard__settings-item {
+  display: flex;
+  align-items: center;
+}
+
+/* line 366, C:/Users/Mel/Documents/GitHub/techdegree-project-7/scss/_main-content.scss */
+.dashboard__settings-item:first-of-type {
+  margin-top: 20px;
+}
+
+/* line 369, C:/Users/Mel/Documents/GitHub/techdegree-project-7/scss/_main-content.scss */
+.dashboard__settings-item:not(:last-of-type) {
+  margin-bottom: 20px;
+}
+
+/* line 373, C:/Users/Mel/Documents/GitHub/techdegree-project-7/scss/_main-content.scss */
+.dashboard__settings p {
+  margin: 0;
+  width: 180px;
+  font-size: .9rem;
+  color: gray;
+}
+
+/* line 379, C:/Users/Mel/Documents/GitHub/techdegree-project-7/scss/_main-content.scss */
+.dashboard__settings .switch {
+  background: #5dd2d6;
+  border-radius: 20px;
+  width: 70px;
+  height: 28px;
+  border: 2px solid #e6e6e6;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* line 388, C:/Users/Mel/Documents/GitHub/techdegree-project-7/scss/_main-content.scss */
+.dashboard__settings .switch-circle {
+  width: 22px;
+  height: 22px;
+  background: #fff;
+  border: 2px solid #e6e6e6;
+  border-radius: 50%;
+}
+
+/* line 399, C:/Users/Mel/Documents/GitHub/techdegree-project-7/scss/_main-content.scss */
+.dashboard__settings input {
+  display: none;
+}
+
+/* line 403, C:/Users/Mel/Documents/GitHub/techdegree-project-7/scss/_main-content.scss */
+.dashboard__settings input#email_on:checked ~ .on, .dashboard__settings input#public_on:checked ~ .on {
+  display: none;
+}
+
+/* line 406, C:/Users/Mel/Documents/GitHub/techdegree-project-7/scss/_main-content.scss */
+.dashboard__settings input#email_on:checked ~ .off, .dashboard__settings input#public_on:checked ~ .off {
+  display: block;
+}
+
+/* line 409, C:/Users/Mel/Documents/GitHub/techdegree-project-7/scss/_main-content.scss */
+.dashboard__settings input#email_on:checked ~ .switch-circle, .dashboard__settings input#public_on:checked ~ .switch-circle {
+  order: 2;
+}
+
+/* line 414, C:/Users/Mel/Documents/GitHub/techdegree-project-7/scss/_main-content.scss */
+.dashboard__settings input#email_off:checked ~ .off, .dashboard__settings input#public_off:checked ~ .off {
+  display: none;
+}
+
+/* line 417, C:/Users/Mel/Documents/GitHub/techdegree-project-7/scss/_main-content.scss */
+.dashboard__settings input#email_off:checked ~ .on, .dashboard__settings input#public_off:checked ~ .on {
+  display: block;
+}
+
+/* line 420, C:/Users/Mel/Documents/GitHub/techdegree-project-7/scss/_main-content.scss */
+.dashboard__settings input#email_off:checked ~ .switch-circle, .dashboard__settings input#public_off:checked ~ .switch-circle {
+  order: -1;
+}
+
+/* line 426, C:/Users/Mel/Documents/GitHub/techdegree-project-7/scss/_main-content.scss */
+.dashboard__settings label {
+  font-size: .8rem;
+  font-weight: 500;
+  padding: 0 10px;
+}
+
+/* line 436, C:/Users/Mel/Documents/GitHub/techdegree-project-7/scss/_main-content.scss */
+.dashboard__settings label.off {
+  color: #fff;
 }
 
 /* line 2, C:/Users/Mel/Documents/GitHub/techdegree-project-7/scss/_notifications.scss */
