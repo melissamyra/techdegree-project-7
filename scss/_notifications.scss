@@ -1,6 +1,6 @@
 // Alert ------------------>
 .alert {
-  background: $accent;
+  background: darken($accent, 20%);
   visibility: hidden;
   margin: 0;
   padding-left: 15px;
@@ -8,22 +8,59 @@
   color: #fff;
   font-size: .8rem;
   border-radius: 2px;
-  animation: slideDown .8s 1s forwards;
+  animation: slideDown .5s 1s forwards;
   overflow: hidden;
   position: relative;
   & strong {
     margin-right: 2px;
   }
-  .close {
-    background: url(../icons/close.png);
-    background-size: contain;
-    width: 10px;
-    height: 10px;
-    position: absolute;
-    top: 13px;
-    right: 13px;
-    &:hover {
-      @extend %hover;
+}
+
+// X button ------------------>
+.close {
+  background: url(../icons/close.png);
+  background-size: contain;
+  width: 10px;
+  height: 10px;
+  position: absolute;
+  top: 17px;
+  right: 13px;
+  &:hover {
+    @extend %hover;
+  }
+}
+
+// Bell notifications --------->
+.notifications {
+  position: absolute;
+  top: 0;
+  right: 20px;
+  padding: 20px;
+  background: $accent;
+  overflow: hidden;
+  width: 250px;
+  border: 1px solid $accent;
+  border-radius: 3px;
+  display: none;
+  & li {
+    color: #fff;
+    font-size: .8rem;
+    list-style-type: none;
+    position: relative;
+    &:not(:last-of-type) {
+      padding-bottom: 10px;
+      margin-bottom: 10px;
+      border-bottom: 1px solid rgba(#fff, .5);
     }
+    & .close {
+      top: 0;
+      right: 0;
+    }
+  }
+  & a {
+    color: lighten($accent, 35%);
+    font-size: .75rem;
+    font-style: italic;
+    text-decoration: none;
   }
 }

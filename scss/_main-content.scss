@@ -3,6 +3,7 @@
 main {
   @include grid(main);
   color: #535353;
+  width: 100%;
 }
 
 h2, h3 {
@@ -21,6 +22,7 @@ h3 {
   font-size: .9rem;
 }
 
+// All sections
 .card {
   background: #fff;
   &:not(.dashboard__top) {
@@ -80,12 +82,15 @@ h3 {
       }
     }
   }
-  &__traffic {
+  &__traffic { //===================================> Traffic Section
     @include grid(dash-traffic);
+    & h3 {
+      padding-top: 5px;
+    }
     & .timeframes {
-      float: right;
       padding: 0;
-      margin: 20px 0 0;
+      margin: 0;
+      float: right;
     }
     & input { // Traffic timeframe items ---------->
       display: none;
@@ -100,33 +105,136 @@ h3 {
       font-weight: 500;
       font-size: .85rem;
       margin: 0 5px;
-      padding: 5px 15px;
+      padding: 5px 10px;
       border-radius: 12px;
       transition: background .2s cubic-bezier(.87,-0.02,.35,1.18);
       &:hover {
         @extend %hover;
+        color: $accent;
       }
     }
   }
-  &__daily {
+  &__daily { //===================================> Daily Traffic Section
     @include grid(dash-daily);
   }
-  &__mobile {
+  &__mobile { //===================================> Mobile Section
     @include grid(dash-mobile);
   }
-  &__social {
+  &__social { //===================================> Social Section
     @include grid(dash-social);
+    & .wrapper {
+      padding: 10px;
+      border: 1px solid darken($bg, 8%);
+      border-radius: 4px;
+      margin: 0 5px;
+      width: calc(100% /3 - 10px);
+      max-width: 300px;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: center;
+      @include mq(768px) {
+        padding: 20px;
+      }
+      @include mq(1024px) {
+        display: grid;
+        grid-template-columns: 1fr 1.5fr;
+        grid-template-rows: 1fr 4fr;
+        grid-template-areas:
+          "icon heading"
+          "icon number";
+        margin: 0 20px;
+        width: calc(100% /3 - 40px);
+      }
+    }
+    &-items {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      padding: 20px 0;
+    }
+    & .icon {
+      background: darken($accent,12%);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 55px;
+      height: 55px;
+      margin-bottom: 10px;
+      @include grid(icon);
+      @include mq(768px) {
+        width: 65px;
+        height: 65px;
+      }
+      @include mq(1024px) {
+        width: 80px;
+        height: 80px;
+      }
+      &.twitter svg {
+        transform: translateY(3px);
+      }
+      &.facebook svg {
+        transform: scale(1.1) translateY(-1px);
+      }
+      &.googleplus svg {
+        transform: translateY(2px) scale(.9);
+      }
+    }
+    & svg {
+      fill: #fff;
+      width: 30px;
+      height: 30px;
+      transform-origin: 50% 50%;
+      transform-box: fill-box;
+      @include mq(768px) {
+        width: 35px;
+        height: 35px;
+      }
+      @include mq(1024px) {
+        width: 40px;
+        height: 40px;
+      }
+    }
+    & h4 {
+      margin: 0;
+      color: $accent;
+      display: none;
+      font-size: .95rem;
+      letter-spacing: .2px;
+      @include grid(heading);
+      @include mq(768px) {
+        display: inline-block;
+      }
+      @include mq(1024px) {
+        font-size: 1rem;
+        align-self: flex-end;
+      }
+    }
+    & span {
+      margin: 0 0 auto;
+      font-size: 1.2rem;
+      font-family: 'Open Sans', sans-serif;
+      color: darken($bg, 30%);
+      @include grid(number);
+      @include mq(768px) {
+        font-size: 1.9rem;
+      }
+      @include mq(1024px) {
+        font-size: 3rem;
+      }
+    }
   }
-  &__members {
+  &__members { //===================================> Members Section
     @include grid(dash-members);
   }
-  &__recent {
+  &__recent { //====================================> Recent Activity Section
     @include grid(dash-recent);
   }
-  &__msg {
+  &__msg { //=======================================> Message Section
     @include grid(dash-msg);
   }
-  &__settings {
+  &__settings { //==================================> Settings Section
     @include grid(dash-settings);
   }
 }

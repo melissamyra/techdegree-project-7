@@ -1,7 +1,7 @@
 //nav bar ----------------->
 .nav {
   @include grid(nav);
-  background: $accent;
+  background: darken($accent, 15%);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -9,6 +9,7 @@
   bottom: 0;
   height: 55px;
   width: 100%;
+  z-index: 10;
   @include mq(768px) {
     position: fixed;
     z-index: 10;
@@ -24,8 +25,12 @@
     @include mq(768px) {
       margin-bottom: 30px;
     }
+    &:hover img {
+      transform: scale(1.1);
+    }
   }
   &__icon {
     width: 22px;
+    transition: transform .2s ease-out;
   }
 }

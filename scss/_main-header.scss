@@ -3,9 +3,9 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  color: #fff;
   background: #fff;
   border-bottom: 1px solid $bg;
+  z-index: 9;
   @include grid(header);
   padding: 0 15px;
   @include mq(768px) {
@@ -24,6 +24,9 @@
     &:hover {
       @extend %hover;
     }
+  }
+  &__notifications {
+    position: relative;
   }
   &__icon-bell {
     height: 20px;
