@@ -34,7 +34,7 @@
         <a href="#dash-settings"><img src="icons/icon-settings.svg" alt="" class="nav__icon"></a>
       </nav>
 
-      <main>
+      <main> <!-- Main Content -->
         <div class="grid-main">
 
           <div class="card dashboard__top" id="dash-top">
@@ -44,6 +44,8 @@
               <div class="search">
                 <input class="dashboard__top-search" type="text" name="search-bar" placeholder="Search">
               </div>
+
+            <!-- Traffic Section -->
             <section class="card dashboard__traffic">
               <h3>Traffic</h3>
               <div class="timeframes">
@@ -58,6 +60,7 @@
             </section>
           </div> <!-- main top div end -->
 
+          <!-- Daily Traffic Section -->
           <section class="card dashboard__daily" id="dash-visits">
             <h3> Daily Traffic</h3>
             <div class="chart__daily">
@@ -65,6 +68,7 @@
             </div>
           </section>
 
+          <!-- Mobile Users Section -->
           <section class="card dashboard__mobile">
             <h3>Mobile Users</h3>
             <div class="chart__mobile">
@@ -72,6 +76,7 @@
             </div>
           </section>
 
+          <!-- Social Stats Section -->
           <section class="card dashboard__social">
             <h3>Social Stats</h3>
             <div class="dashboard__social-items">
@@ -121,18 +126,101 @@
             </div> <!-- dashboard__social-items end -->
           </section>
 
+          <!-- New Members Section -->
           <section class="card dashboard__members" id="dash-members">
             <h3>New Members</h3>
+            <div class="dashboard__members-item">
+              <img src="images/member-1.jpg" alt="">
+              <div class="dashboard__members-info">
+                <span class="dashboard__members-name">Victoria Chambers</span>
+                <p class="dashboard__members-email">victoria.chambers@example.com</p>
+              </div> <!-- dashboard member info -->
+              <span class="date">15/05/20</span>
+            </div> <!-- dashboard member item -->
+
+            <div class="dashboard__members-item">
+              <img src="images/member-2.jpg" alt="">
+              <div class="dashboard__members-info">
+                <span class="dashboard__members-name">Dale Byrd</span>
+                <p class="dashboard__members-email">dale.byrd@example.com</p>
+              </div> <!-- dashboard member info -->
+              <span class="date">15/05/20</span>
+            </div> <!-- dashboard member item -->
+
+            <div class="dashboard__members-item">
+              <img src="images/member-3.jpg" alt="">
+              <div class="dashboard__members-info">
+                <span class="dashboard__members-name">Dawn Wood</span>
+                <p class="dashboard__members-email">dawn.wood@example.com</p>
+              </div> <!-- dashboard member info -->
+              <span class="date">15/05/20</span>
+            </div> <!-- dashboard member item -->
+
+            <div class="dashboard__members-item">
+              <img src="images/member-4.jpg" alt="">
+              <div class="dashboard__members-info">
+                <span class="dashboard__members-name">Dan Oliver</span>
+                <p class="dashboard__members-email">dan.oliver@example.com</p>
+              </div> <!-- dashboard member info -->
+              <span class="date">15/05/20</span>
+            </div> <!-- dashboard member item -->
           </section>
 
+          <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px">
+             <symbol id="arrow" viewBox="0 0 143.5 229.2">
+               <path d="M142.6,114.7c0.3,6.8-2.2,12.5-7.1,17.3c-29.8,29.8-59.6,59.6-89.4,89.4c-9.7,9.7-22.5,9.7-32.2,0.1
+               	c-2.2-2.2-4.4-4.3-6.5-6.5c-8.8-9-8.8-22,0.1-30.9c22.1-22.2,44.3-44.3,66.5-66.5c3.3-3.3,3.2-2.5-0.1-5.8
+               	C52.1,89.9,30.2,68.1,8.4,46.3c-10.2-10.2-10.2-22.8,0.1-33c2-2,4-4.1,6.1-6.1c8.8-8.6,21.9-8.7,30.7,0c11.1,10.9,22,22,33,33
+               	c19,19,38,38,57,57C140.3,102,142.9,107.7,142.6,114.7z"/>
+            </symbol>
+          </svg>
+
+          <!-- Recent Activity Section -->
           <section class="card dashboard__recent">
             <h3>Recent Activity</h3>
+            <div class="dashboard__recent-item">
+              <img src="images/member-1.jpg" alt="">
+              <div class="dashboard__recent-info">
+                <span class="dashboard__recent-text">Victoria Chambers commented on 'Stat SEO Tips'</span>
+                <p class="dashboard__recent-date">4 hours ago</p>
+              </div> <!-- dashboard member info -->
+              <svg><use xlink:href="#arrow" class="arrow"/></svg>
+            </div> <!-- dashboard member item -->
+
+            <div class="dashboard__recent-item">
+              <img src="images/member-2.jpg" alt="">
+              <div class="dashboard__recent-info">
+                <span class="dashboard__recent-text">Dale Byrd liked your post on Facebook</span>
+                <p class="dashboard__recent-date">5 hours ago</p>
+              </div> <!-- dashboard member info -->
+              <svg><use xlink:href="#arrow" class="arrow"/></svg>
+            </div> <!-- dashboard member item -->
+
+            <div class="dashboard__recent-item">
+              <img src="images/member-3.jpg" alt="">
+              <div class="dashboard__recent-info">
+                <span class="dashboard__recent-text">Dawn Wood commented on your post on Facebook</span>
+                <p class="dashboard__recent-date">5 hours ago</p>
+              </div> <!-- dashboard member info -->
+              <svg><use xlink:href="#arrow" class="arrow"/></svg>
+            </div> <!-- dashboard member item -->
+
+            <div class="dashboard__recent-item">
+              <img src="images/member-4.jpg" alt="">
+              <div class="dashboard__recent-info">
+                <span class="dashboard__recent-text">Dan Oliver posted 'Stat SEO Tips'</span>
+                <p class="dashboard__recent-date">1 day ago</p>
+              </div> <!-- dashboard member info -->
+              <svg><use xlink:href="#arrow" class="arrow"/></svg>
+            </div> <!-- dashboard member item -->
           </section>
 
+          <!-- Message User Section -->
           <section class="card dashboard__msg">
             <h3>Message User</h3>
           </section>
 
+          <!-- Settings Section -->
           <section class="card dashboard__settings" id="dash-settings">
             <h3>Settings</h3>
           </section>

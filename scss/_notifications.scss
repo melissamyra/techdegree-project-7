@@ -38,10 +38,13 @@
   padding: 20px;
   background: $accent;
   overflow: hidden;
-  width: 250px;
+  width: 200px;
   border: 1px solid $accent;
   border-radius: 3px;
   display: none;
+  @include mq(768px) {
+    width: 250px;
+  }
   & li {
     color: #fff;
     font-size: .8rem;
@@ -53,8 +56,8 @@
       border-bottom: 1px solid rgba(#fff, .5);
     }
     & .close {
-      top: 0;
-      right: 0;
+      top: 2px;
+      right: -5px;
     }
   }
   & a {
