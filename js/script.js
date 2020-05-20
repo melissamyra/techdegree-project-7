@@ -172,9 +172,12 @@ notifications.addEventListener('click', (e) => {
 userSearch.addEventListener('input', () => {
   let input = userSearch.value.toUpperCase();
   let results = searchResults.querySelectorAll('li');
-  let notFound = 0;
 
-  show(searchResults);
+  if (userSearch.value.length === 0) {
+    hide(searchResults);
+  } else {
+    show(searchResults);
+  }
 
   for (let i = 0; i < results.length; i++) {
     let name = results[i].textContent.toUpperCase();
@@ -192,8 +195,9 @@ searchResults.addEventListener('click', (e) => {
 
   if (e.target.tagName === 'LI') {
     userSearch.value = e.target.textContent;
-    hide(e.target);
   }
+
+  hide(searchResults);
 
 });
 
