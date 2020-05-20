@@ -33,7 +33,7 @@
 // Bell notifications --------->
 .notifications {
   position: absolute;
-  top: 0;
+  top: 20px;
   right: 20px;
   padding: 20px;
   background: $accent;
@@ -41,6 +41,7 @@
   width: 200px;
   border: 1px solid $accent;
   border-radius: 3px;
+  transform-origin: 50% 0;
   display: none;
   @include mq(768px) {
     width: 250px;
@@ -66,4 +67,15 @@
     font-style: italic;
     text-decoration: none;
   }
+}
+
+// Ping Dot ------------------->
+.ping-dot {
+  background: saturate($accent, 30%);
+  position: absolute;
+  top: 0;
+  right: 10px;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
 }
