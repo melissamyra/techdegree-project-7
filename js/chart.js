@@ -131,8 +131,10 @@ var mobileChart = new Chart(mChart, {
     options: {
       legend: {
         position: 'right',
-        boxWidth: 40,
-        fontSize: 12,
+        labels : {
+          boxWidth: 15,
+          fontSize: 15,
+        }
       }
     }
 });
