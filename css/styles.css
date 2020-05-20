@@ -676,8 +676,15 @@ h3 {
 }
 .dashboard__traffic .timeframes {
   padding: 0;
-  margin: 0;
-  float: right;
+  margin: 15px 0 0;
+  display: flex;
+  justify-content: center;
+}
+@media (min-width: 768px) {
+  .dashboard__traffic .timeframes {
+    float: right;
+    margin: 0;
+  }
 }
 .dashboard__traffic input {
   display: none;
@@ -691,7 +698,7 @@ h3 {
   font-family: "Roboto", sans-serif;
   font-weight: 500;
   font-size: 0.85rem;
-  margin: 0 5px;
+  margin: 0 2px;
   padding: 5px 10px;
   border-radius: 12px;
   transition: background 0.2s cubic-bezier(0.87, -0.02, 0.35, 1.18);

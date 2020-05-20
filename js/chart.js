@@ -59,7 +59,7 @@ let trafficChart = new Chart(tChart, {
             borderWidth: 1,
             hoverBorderWidth: 2,
             hoverBorderColor: '#009d9d',
-            data: monthlyTraffic,
+            data: hourlyTraffic,
         }]
     },
             options: {
