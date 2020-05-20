@@ -340,7 +340,7 @@ template {
   display: none;
 }
 
-.close:hover, .dashboard__settings label:hover, .dashboard__settings .switch-circle:hover, .dashboard__recent-text:hover, .dashboard__recent img:hover, .dashboard__members-name:hover, .dashboard__members img:hover, .dashboard__traffic label:hover, .header__user:hover, .header__icon-bell:hover, .header__logo:hover {
+.close:hover, .dashboard__settings label:hover, .dashboard__settings .switch-circle:hover, .dashboard__msg li:hover, .dashboard__recent-text:hover, .dashboard__recent img:hover, .dashboard__members-name:hover, .dashboard__members img:hover, .dashboard__traffic label:hover, .header__user:hover, .header__icon-bell:hover, .header__logo:hover {
   cursor: pointer;
 }
 
@@ -917,6 +917,7 @@ h3 {
   display: flex;
   flex-direction: column;
   margin-top: 20px;
+  position: relative;
 }
 .dashboard__msg input, .dashboard__msg textarea {
   outline: none;
@@ -935,6 +936,22 @@ h3 {
 }
 .dashboard__msg input {
   height: 40px;
+}
+.dashboard__msg ul {
+  background: #e6e6e6;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  position: absolute;
+  top: 40px;
+  display: none;
+}
+.dashboard__msg li {
+  list-style-type: none;
+  padding: 10px;
+}
+.dashboard__msg li:hover {
+  background: #cdcdcd;
 }
 .dashboard__msg textarea {
   height: 150px;

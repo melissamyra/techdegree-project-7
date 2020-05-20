@@ -7,13 +7,27 @@ const alert = document.createElement('P');
 
 // Notifications --------------------------------------------->
 const bell = document.querySelector('.header__icon-bell');
-const notifications = document.querySelector('.notifications');
 const pingDot = document.querySelector('.ping-dot');
+const notifications = document.querySelector('.notifications');
+
+const notificationItems = [
+  'You have 12 new viewers today.<div class="close"></div>',
+  'Victoria Chambers added you on facebook.<div class="close"></div>',
+  'Google Plus will be discontinued. <a target="_blank" href="https://support.google.com/plus/answer/9217723?hl=en">Read more...</a><div class="close"></div>'
+];
 
 // Message Section ------------------------------------------->
 const sendMsgButton = document.querySelector('button[type="submit"]');
 const userSearch = document.querySelector('input[name="user_name"]');
 const userMsg = document.querySelector('textarea[name="message"]');
+const searchResults = document.querySelector('.dashboard__msg ul');
+
+const userNames = [
+  'Victoria Chambers',
+  'Dale Byrd',
+  'Dawn Wood',
+  'Dan Oliver'
+];
 
 // Settings -------------------------------------------------->
 const settingsSection = document.getElementById('dash-settings')
@@ -26,36 +40,29 @@ const switchCircles = document.querySelectorAll('.switch-circle');
 // Functions =================================================>
 
 // change chart data
-const setChartData = (chart,data) => {
-  chart.data.datasets[0].data = data;
-}
+const setChartData = (chart,data) => chart.data.datasets[0].data = data;
 
 // alert pop up
-const alertPopUp = () => {
-  trafficHeading.parentNode.insertBefore(alert, trafficHeading);
-}
+const alertPopUp = () => trafficHeading.parentNode.insertBefore(alert, trafficHeading);
 
 // add notification
-const addNotification = (text) => {
-  let ping = document.createElement('LI');
-  ping.innerHTML = text;
-  notifications.appendChild(ping);
+const addThing = (element,text) => {
+  let thing = document.createElement('LI');
+  thing.innerHTML = text;
+  element.appendChild(thing);
 }
 
 // hide thing
-const hide = (element) => {
-  element.style.display = "none";
-}
+const hide = (element) => element.style.display = "none";
 
 // show thing
-const show = (element) => {
-  element.style.display = "block";
-}
+const show = (element) => element.style.display = "block";
 
 // add animation
-const animate = (element, animation) => {
-  element.style.animation = animation;
-}
+const animate = (element, animation) => element.style.animation = animation;
+
+// clear user input
+const clearInput = (textfield) => textfield.value = '';
 
 // =================================================================================
 //                       * LISTENERS *
@@ -85,9 +92,16 @@ alert.innerHTML = '<strong>Alert</strong> You have several new notifications!<di
 document.addEventListener('DOMContentLoaded', () => {
 
   // add notifications
-  addNotification('You have 12 new viewers today.<div class="close"></div>');
-  addNotification('Victoria Chambers added you on facebook.<div class="close"></div>');
-  addNotification('Google Plus will be discontinued. <a target="_blank" href="https://support.google.com/plus/answer/9217723?hl=en">Read more...</a><div class="close"></div>');
+  for (let i = 0; i < notificationItems.length; i++) {
+    addThing(notifications, notificationItems[i]);
+  }
+
+  // add member names search results
+  for (let i = 0; i < userNames.length; i++) {
+    addThing(searchResults,userNames[i]);
+  }
+
+  hide(searchResults);
 
   // hide notification menu
   hide(notifications);
@@ -117,19 +131,19 @@ bell.addEventListener('click', () => {
   // toggle notifications menu view
   if (notifications.style.display === "none") {
     setTimeout(() => {
-      animate(notifications, 'show .2s forwards');
+      animate(notifications, 'show .15s forwards');
       show(notifications);
-    }, 250)
+    }, 150)
   } else {
-    animate(notifications, 'hide .2s forwards');
+    animate(notifications, 'hide .15s forwards');
     setTimeout(() => {
       hide(notifications);
-    }, 250)
+    }, 150)
   }
 
   // if no notifications add message
   if (notifications.childNodes.length < 1) {
-    addNotification('You have no new notifications.');
+    addThing(notifications, 'You have no new notifications.');
   }
 });
 
@@ -154,15 +168,45 @@ notifications.addEventListener('click', (e) => {
 
 // Message User Section ====================================>
 
+// input
+userSearch.addEventListener('input', () => {
+  let input = userSearch.value.toUpperCase();
+  let results = searchResults.querySelectorAll('li');
+  let notFound = 0;
+
+  show(searchResults);
+
+  for (let i = 0; i < results.length; i++) {
+    let name = results[i].textContent.toUpperCase();
+    if (name.indexOf(input) > -1) {
+      show(results[i]);
+    } else {
+      hide(results[i]);
+    }
+  }
+
+});
+
+// results click
+searchResults.addEventListener('click', (e) => {
+
+  if (e.target.tagName === 'LI') {
+    userSearch.value = e.target.textContent;
+    hide(e.target);
+  }
+
+});
+
+
+// submit button
 sendMsgButton.addEventListener('click', (e) => {
-  // e.preventDefault();
 
   if (userSearch.value.length > 0 && userMsg.value.length > 0) {
     e.preventDefault();
     let userName = userSearch.value;
     window.alert(`Awesome! The message has been sent to ${userName}. No turning back now!!`);
-    userSearch.value = '';
-    userMsg.value = '';
+    clearInput(userSearch);
+    clearInput(userMsg);
   } else {
     window.alert('Both user name and message text need to be filled!');
   }
@@ -177,21 +221,25 @@ settingsSection.addEventListener('click', (e) => {
 
   if (e.target.className === 'switch-circle') {
     let button = e.target;
-    if (button.previousElementSibling.previousElementSibling.checked === false) {
-      button.previousElementSibling.previousElementSibling.checked = true;
-      button.parentNode.style.background = '#f3f3f3';
+    let buttonSwitch = button.parentNode;
+    let buttonOFF = button.previousElementSibling.previousElementSibling;
+    let buttonON = buttonSwitch.firstElementChild;
+    if (buttonOFF.checked === false) {
+      buttonOFF.checked = true;
+      buttonSwitch.style.background = '#f3f3f3';
     } else {
-      button.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.checked = true;
-      button.parentNode.style.background = '';
+      buttonON.checked = true;
+      buttonSwitch.style.background = '';
     }
   }
 
   if (e.target.tagName === 'LABEL') {
     let button = e.target;
-    if (button.parentNode.style.background === '') {
-      button.parentNode.style.background = '#f3f3f3';
+    let buttonSwitch = button.parentNode;
+    if (buttonSwitch.style.background === '') {
+      buttonSwitch.style.background = '#f3f3f3';
     } else {
-      button.parentNode.style.background = '';
+      buttonSwitch.style.background = '';
     }
 
   }

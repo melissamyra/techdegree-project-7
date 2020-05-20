@@ -324,6 +324,7 @@ h3 {
       display: flex;
       flex-direction: column;
       margin-top: 20px;
+      position: relative;
     }
     & input, & textarea {
       outline: none;
@@ -342,6 +343,23 @@ h3 {
     }
     & input {
       height: 40px;
+    }
+    & ul {
+      background: darken($bg, 5%);
+      padding: 0;
+      margin: 0;
+      width: 100%;
+      position: absolute;
+      top: 40px;
+      display: none;
+    }
+    & li {
+      list-style-type: none;
+      padding: 10px;
+      &:hover {
+        background: darken($bg, 15%);
+        @extend %hover;
+      }
     }
     & textarea {
       height: 150px;
