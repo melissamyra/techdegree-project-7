@@ -332,8 +332,12 @@ h3 {
       border-radius: 3px;
       padding: 10px;
       font-size: .9rem;
+      transition: background .2s ease;
       &::placeholder {
         color: darken($bg, 10%);
+      }
+      &:focus {
+        background: $bg;
       }
     }
     & input {
@@ -449,6 +453,10 @@ h3 {
       border-radius: 3px;
       padding: 10px;
       font-size: .9rem;
+      transition: background .2s ease;
+      &:focus {
+        background: $bg;
+      }
     }
     &-buttons {
       display: flex;
