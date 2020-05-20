@@ -7,7 +7,13 @@ const alert = document.createElement('P');
 
 // Notifications --------------------------------------------->
 const bell = document.querySelector('.header__icon-bell');
-let notifications = document.querySelector('.notifications');
+const notifications = document.querySelector('.notifications');
+const pingDot = document.querySelector('.ping-dot');
+
+// Message Section ------------------------------------------->
+const sendMsgButton = document.querySelector('button[type="submit"]');
+const userSearch = document.querySelector('input[name="user_name"]');
+const userMsg = document.querySelector('textarea[name="message"]');
 
 // Settings -------------------------------------------------->
 const settingsSection = document.getElementById('dash-settings')
@@ -34,6 +40,21 @@ const addNotification = (text) => {
   let ping = document.createElement('LI');
   ping.innerHTML = text;
   notifications.appendChild(ping);
+}
+
+// hide thing
+const hide = (element) => {
+  element.style.display = "none";
+}
+
+// show thing
+const show = (element) => {
+  element.style.display = "block";
+}
+
+// add animation
+const animate = (element, animation) => {
+  element.style.animation = animation;
 }
 
 // =================================================================================
@@ -69,7 +90,7 @@ document.addEventListener('DOMContentLoaded', () => {
   addNotification('Google Plus will be discontinued. <a target="_blank" href="https://support.google.com/plus/answer/9217723?hl=en">Read more...</a><div class="close"></div>');
 
   // hide notification menu
-  notifications.style.display = "none";
+  hide(notifications);
 
   // show alert
   alertPopUp();
@@ -80,7 +101,7 @@ document.addEventListener('DOMContentLoaded', () => {
 alert.addEventListener('click', (e) => {
 
   if (e.target.className === 'close') {
-    alert.style.animation = 'slideUp .5s forwards';
+    animate(alert, 'slideUp .5s forwards');
     setTimeout(() => {
       alert.parentNode.removeChild(alert);
     }, 500);
@@ -95,9 +116,15 @@ bell.addEventListener('click', () => {
 
   // toggle notifications menu view
   if (notifications.style.display === "none") {
-  notifications.style.display = "block";
+    setTimeout(() => {
+      animate(notifications, 'show .2s forwards');
+      show(notifications);
+    }, 250)
   } else {
-    notifications.style.display = "none";
+    animate(notifications, 'hide .2s forwards');
+    setTimeout(() => {
+      hide(notifications);
+    }, 250)
   }
 
   // if no notifications add message
@@ -112,17 +139,38 @@ notifications.addEventListener('click', (e) => {
   // if 'x' pressed, remove notification
   if (e.target.className === 'close') {
     let noti = e.target.parentNode;
-    noti.parentNode.removeChild(noti);
-  }
-
-  // if no notifications, hide menu
-  if (notifications.childNodes.length < 1) {
-    notifications.style.display = 'none';
+    animate(noti, 'disappear .2s forwards');
+    setTimeout(() => {
+      noti.parentNode.removeChild(noti);
+      // if no notifications, hide menu
+      if (notifications.childNodes.length < 1) {
+        hide(notifications);
+        hide(pingDot);
+      }
+    }, 200);
   }
 
 });
 
-// Settings =============================================>
+// Message User Section ====================================>
+
+sendMsgButton.addEventListener('click', (e) => {
+  // e.preventDefault();
+
+  if (userSearch.value.length > 0 && userMsg.value.length > 0) {
+    e.preventDefault();
+    let userName = userSearch.value;
+    window.alert(`Awesome! The message has been sent to ${userName}. No turning back now!!`);
+    userSearch.value = '';
+    userMsg.value = '';
+  } else {
+    window.alert('Both user name and message text need to be filled!');
+  }
+
+});
+
+
+// Settings ================================================>
 
 // listen to settings section
 settingsSection.addEventListener('click', (e) => {
