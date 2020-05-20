@@ -353,6 +353,7 @@ h3 {
       text-transform: uppercase;
       background: lighten($accent, 5%);
       transition: background .2s ease-out;
+      border-radius: 3px;
       &:active {
         background: darken($accent,5%);
       }
@@ -360,6 +361,8 @@ h3 {
   }
   &__settings { //==================================> Settings Section
     @include grid(dash-settings);
+    display: flex;
+    flex-direction: column;
     &-item {
       display: flex;
       align-items: center;
@@ -435,6 +438,45 @@ h3 {
       }
       &.off {
         color: #fff;
+      }
+    }
+    &-timezone {
+      width: 100%;
+      outline: none;
+      border: 2px solid $bg;
+      margin-top: auto;
+      margin-bottom: 15px;
+      border-radius: 3px;
+      padding: 10px;
+      font-size: .9rem;
+    }
+    &-buttons {
+      display: flex;
+      justify-content: space-between;
+    }
+    & button {
+      width: 49%;
+      margin: 0;
+      outline: none;
+      border: none;
+      padding: 15px 0;
+      color: #fff;
+      font-size: .9rem;
+      font-weight: 500;
+      text-transform: uppercase;
+      transition: background .2s ease-out;
+      border-radius: 3px;
+      &.save {
+        background: lighten($accent, 5%);
+        &:active {
+          background: darken($accent,5%);
+        }
+      }
+      &.cancel {
+        background: darken($bg, 15%);
+        &:active {
+          background: darken($bg,25%);
+        }
       }
     }
   }
