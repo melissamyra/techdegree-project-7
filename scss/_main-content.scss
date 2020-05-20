@@ -407,7 +407,7 @@ h3 {
       color: darken($bg, 45%);
     }
     & .switch {
-      background: $accent;
+      background: $bg;
       border-radius: 20px;
       width: 70px;
       height: 28px;
@@ -497,13 +497,13 @@ h3 {
       text-transform: uppercase;
       transition: background .2s ease-out;
       border-radius: 3px;
-      &.save {
+      &#save {
         background: lighten($accent, 5%);
         &:active {
           background: darken($accent,5%);
         }
       }
-      &.cancel {
+      &#cancel {
         background: darken($bg, 15%);
         &:active {
           background: darken($bg,25%);

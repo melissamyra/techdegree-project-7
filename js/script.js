@@ -33,8 +33,14 @@ const userNames = [
 const settingsSection = document.getElementById('dash-settings')
 const switchButtons = document.querySelectorAll('.switch');
 const switchCircles = document.querySelectorAll('.switch-circle');
-
-
+const buttonSave = document.getElementById('save');
+const buttonCancel = document.getElementById('cancel');
+// local storage
+const button_emailON = document.getElementById('email_on');
+const button_emailOFF = document.getElementById('email_off');
+const button_publicON = document.getElementById('public_on');
+const button_publicOFF = document.getElementById('public_off');
+const timezone = document.getElementById('timezone');
 
 
 // Functions =================================================>
@@ -63,6 +69,9 @@ const animate = (element, animation) => element.style.animation = animation;
 
 // clear user input
 const clearInput = (textfield) => textfield.value = '';
+
+//set background colour
+const setBGColor = (element, color) => element.style.background = color;
 
 // =================================================================================
 //                       * LISTENERS *
@@ -108,6 +117,26 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // show alert
   alertPopUp();
+
+  // set saved settings
+  let emailSetting = localStorage.getItem('email');
+  let publicSetting = localStorage.getItem('set-public');
+
+  if (emailSetting === 'true') {
+    button_emailON.checked = true;
+    setBGColor(button_emailON.parentNode, '#5dd2d6');
+  } else {
+    button_emailON.checked = false;
+    setBGColor(button_emailON.parentNode, '');
+  }
+  if (publicSetting === 'true') {
+    button_publicON.checked = true;
+    setBGColor(button_publicON.parentNode, '#5dd2d6');
+  } else {
+    button_publicON.checked = false;
+    setBGColor(button_publicON.parentNode, '');
+  }
+  timezone.selectedIndex = localStorage.getItem('timezone');
 
 });
 
@@ -228,24 +257,56 @@ settingsSection.addEventListener('click', (e) => {
     let buttonSwitch = button.parentNode;
     let buttonOFF = button.previousElementSibling.previousElementSibling;
     let buttonON = buttonSwitch.firstElementChild;
-    if (buttonOFF.checked === false) {
-      buttonOFF.checked = true;
-      buttonSwitch.style.background = '#f3f3f3';
-    } else {
+
+    if (buttonON.checked === false) {
       buttonON.checked = true;
-      buttonSwitch.style.background = '';
+      setBGColor(buttonSwitch, '#5dd2d6');
+    } else {
+      buttonOFF.checked = true;
+      setBGColor(buttonSwitch, '');
     }
   }
 
   if (e.target.tagName === 'LABEL') {
     let button = e.target;
     let buttonSwitch = button.parentNode;
-    if (buttonSwitch.style.background === '') {
-      buttonSwitch.style.background = '#f3f3f3';
-    } else {
-      buttonSwitch.style.background = '';
-    }
 
+    if (buttonSwitch.style.background === '') {
+      setBGColor(buttonSwitch, '#5dd2d6');
+    } else {
+      setBGColor(buttonSwitch, '');
+    }
   }
 
+});
+
+// local storage ----------------------------------------->
+
+// listen to save button
+buttonSave.addEventListener('click', () => {
+  let checkEmail = button_emailON.checked;
+  let checkPublic = button_publicON.checked;
+  let timezoneSelected = timezone.selectedIndex;
+
+  if (checkEmail) {
+    localStorage.setItem('email', true);
+  } else {
+    localStorage.setItem('email', false);
+  }
+  if (checkPublic) {
+    localStorage.setItem('set-public', true);
+  } else {
+    localStorage.setItem('set-public', false);
+  }
+
+  localStorage.setItem('timezone', timezoneSelected);
+
+});
+
+
+// listen to cancel button
+buttonCancel.addEventListener('click', () => {
+  localStorage.removeItem('email');
+  localStorage.removeItem('set-public');
+  localStorage.removeItem('timezone');
 });

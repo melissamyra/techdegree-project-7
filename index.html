@@ -234,9 +234,9 @@
               <div class="dashboard__settings-item">
                 <p>Send Email notifications</p>
                 <div class="switch">
-                  <input type="radio" name="email_settings_switch" id="email_on" checked>
+                  <input type="radio" name="email_settings_switch" id="email_on">
                   <label for="email_on" class="on">OFF</label>
-                  <input type="radio" name="email_settings_switch" id="email_off">
+                  <input type="radio" name="email_settings_switch" id="email_off" checked>
                   <label for="email_off" class="off">ON</label>
                   <div class="switch-circle"></div>
                 </div>
@@ -245,16 +245,16 @@
               <div class="dashboard__settings-item">
                 <p>Set Profile to Public</p>
                 <div class="switch">
-                  <input type="radio" name="privacy_settings_switch" id="public_on" checked>
+                  <input type="radio" name="privacy_settings_switch" id="public_on">
                   <label for="public_on" class="on">OFF</label>
-                  <input type="radio" name="privacy_settings_switch" id="public_off">
+                  <input type="radio" name="privacy_settings_switch" id="public_off" checked>
                   <label for="public_off" class="off">ON</label>
                   <div class="switch-circle"></div>
                 </div>
               </div>  <!-- dashboard settings item -->
             </div> <!-- dashboard settings toggle -->
 
-            <select class="dashboard__settings-timezone" name="timezone">
+            <select class="dashboard__settings-timezone" name="timezone" id="timezone">
               <option selected disabled>Select Timezone</option>
               <option>UTC-12:00</option>
               <option>UTC-11:00</option>
@@ -267,8 +267,8 @@
               <option>UTC-05:00</option>
             </select>
             <div class="dashboard__settings-buttons">
-              <button class="save">Save</button>
-              <button class="cancel">Cancel</button>
+              <button id="save">Save</button>
+              <button id="cancel">Cancel</button>
             </div>
           </section>
 
