@@ -1168,6 +1168,7 @@ h3 {
 
 canvas {
   margin-top: 20px;
+  max-width: 100%;
 }
 
 .chart__traffic {
