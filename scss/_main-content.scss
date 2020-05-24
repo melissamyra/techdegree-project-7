@@ -17,7 +17,6 @@
 main {
   @include grid(main);
   color: #535353;
-  width: calc(100vw - 60px);
   height: 100%;
   overflow-x: hidden;
 }

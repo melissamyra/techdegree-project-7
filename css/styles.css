@@ -605,7 +605,6 @@ body {
 main {
   grid-area: main;
   color: #535353;
-  width: calc(100vw - 60px);
   height: 100%;
   overflow-x: hidden;
 }
