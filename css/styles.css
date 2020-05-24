@@ -741,6 +741,11 @@ h3 {
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
+  transition: border 0.2s ease-out, transform 0.2s ease-out;
+}
+.dashboard__social .wrapper:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 5px 1px #e6e6e6;
 }
 @media (min-width: 768px) {
   .dashboard__social .wrapper {

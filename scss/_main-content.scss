@@ -154,6 +154,12 @@ h3 {
       flex-direction: column;
       justify-content: flex-start;
       align-items: center;
+      transition: box-shadow .2s ease-out,
+                  transform .2s ease-out;
+      &:hover {
+        transform: scale(1.05);
+        box-shadow: 0 0 3px 1px darken($bg, 5%);
+      }
       @include mq(768px) {
         padding: 20px;
       }
