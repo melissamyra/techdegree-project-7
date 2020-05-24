@@ -380,10 +380,14 @@ h3 {
       font-weight: 500;
       text-transform: uppercase;
       background: lighten($accent, 5%);
-      transition: background .2s ease-out;
+      transition: background .1s ease-out;
       border-radius: 3px;
+      &:hover {
+        @extend %hover;
+        background: darken($accent,2%);
+      }
       &:active {
-        background: darken($accent,5%);
+        background: darken($accent,10%);
       }
     }
   }
@@ -496,16 +500,25 @@ h3 {
       font-size: .9rem;
       font-weight: 500;
       text-transform: uppercase;
-      transition: background .2s ease-out;
+      transition: background .1s ease-out;
       border-radius: 3px;
+      &:hover {
+        @extend %hover;
+      }
       &#save {
         background: lighten($accent, 5%);
+        &:hover {
+          background: darken($accent,2%);
+        }
         &:active {
-          background: darken($accent,5%);
+          background: darken($accent,10%);
         }
       }
       &#cancel {
         background: darken($bg, 15%);
+        &:hover {
+          background: darken($bg,20%);
+        }
         &:active {
           background: darken($bg,25%);
         }

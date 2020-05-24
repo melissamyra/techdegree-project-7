@@ -340,7 +340,7 @@ template {
   display: none;
 }
 
-.close:hover, .dashboard__settings label:hover, .dashboard__settings .switch-circle:hover, .dashboard__msg li:hover, .dashboard__recent-text:hover, .dashboard__recent img:hover, .dashboard__members-name:hover, .dashboard__members img:hover, .dashboard__traffic label:hover, .header__user:hover, .header__icon-bell:hover, .header__logo:hover {
+.close:hover, .dashboard__settings button:hover, .dashboard__settings label:hover, .dashboard__settings .switch-circle:hover, .dashboard__msg button:hover, .dashboard__msg li:hover, .dashboard__recent-text:hover, .dashboard__recent img:hover, .dashboard__members-name:hover, .dashboard__members img:hover, .dashboard__traffic label:hover, .header__user:hover, .header__icon-bell:hover, .header__logo:hover {
   cursor: pointer;
 }
 
@@ -974,11 +974,14 @@ h3 {
   font-weight: 500;
   text-transform: uppercase;
   background: #71d8db;
-  transition: background 0.2s ease-out;
+  transition: background 0.1s ease-out;
   border-radius: 3px;
 }
+.dashboard__msg button:hover {
+  background: #55d0d4;
+}
 .dashboard__msg button:active {
-  background: #49ccd1;
+  background: #34c7cc;
 }
 .dashboard__settings {
   grid-area: dash-settings;
@@ -1075,17 +1078,23 @@ h3 {
   font-size: 0.9rem;
   font-weight: 500;
   text-transform: uppercase;
-  transition: background 0.2s ease-out;
+  transition: background 0.1s ease-out;
   border-radius: 3px;
 }
 .dashboard__settings button#save {
   background: #71d8db;
 }
+.dashboard__settings button#save:hover {
+  background: #55d0d4;
+}
 .dashboard__settings button#save:active {
-  background: #49ccd1;
+  background: #34c7cc;
 }
 .dashboard__settings button#cancel {
   background: #cdcdcd;
+}
+.dashboard__settings button#cancel:hover {
+  background: silver;
 }
 .dashboard__settings button#cancel:active {
   background: #b3b3b3;

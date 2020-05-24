@@ -288,17 +288,17 @@ buttonSave.addEventListener('click', () => {
   let checkPublic = button_publicON.checked;
   let timezoneSelected = timezone.selectedIndex;
 
-  if (checkEmail) {
-    localStorage.setItem('email', true);
-  } else {
-    localStorage.setItem('email', false);
+  if (checkEmail) { // if email button is checked 'on'
+    localStorage.setItem('email', true); // save email key as true
+  } else { // else if checked 'off'
+    localStorage.setItem('email', false); // save key as false
   }
-  if (checkPublic) {
-    localStorage.setItem('set-public', true);
-  } else {
-    localStorage.setItem('set-public', false);
+  if (checkPublic) { // if set profile public button is checked 'on'
+    localStorage.setItem('set-public', true); // save set profile public key as true
+  } else { // else if checked 'off'
+    localStorage.setItem('set-public', false); // save key as false
   }
-
+  // save timezone key as selected option
   localStorage.setItem('timezone', timezoneSelected);
 
 });
@@ -306,6 +306,13 @@ buttonSave.addEventListener('click', () => {
 
 // listen to cancel button
 buttonCancel.addEventListener('click', () => {
+  //reset switches
+  button_emailOFF.checked = true;
+  setBGColor(button_emailOFF.parentNode, '');
+  button_publicOFF.checked = true;
+  setBGColor(button_publicOFF.parentNode, '');
+  timezone.selectedIndex = 0;
+  //remove local storage data
   localStorage.removeItem('email');
   localStorage.removeItem('set-public');
   localStorage.removeItem('timezone');
