@@ -340,7 +340,7 @@ template {
   display: none;
 }
 
-.close:hover, .dashboard__settings button:hover, .dashboard__settings label:hover, .dashboard__settings .switch-circle:hover, .dashboard__msg button:hover, .dashboard__msg li:hover, .dashboard__recent-text:hover, .dashboard__recent img:hover, .dashboard__members-name:hover, .dashboard__members img:hover, .dashboard__traffic label:hover, .header__user:hover, .header__icon-bell:hover, .header__logo:hover {
+.popup__close:hover, .close:hover, .dashboard__settings button:hover, .dashboard__settings label:hover, .dashboard__settings .switch-circle:hover, .dashboard__msg button:hover, .dashboard__msg li:hover, .dashboard__recent-text:hover, .dashboard__recent img:hover, .dashboard__members-name:hover, .dashboard__members img:hover, .dashboard__traffic label:hover, .header__user:hover, .header__icon-bell:hover, .header__logo:hover {
   cursor: pointer;
 }
 
@@ -998,6 +998,9 @@ h3 {
 .dashboard__settings-item:not(:last-of-type) {
   margin-bottom: 20px;
 }
+.dashboard__settings-item:last-of-type {
+  margin-bottom: 50px;
+}
 .dashboard__settings p {
   margin: 0;
   width: 180px;
@@ -1183,6 +1186,51 @@ canvas {
 
 .chart__traffic {
   width: 100%;
+}
+.popup__overlay {
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(66, 66, 66, 0.7);
+  backdrop-filter: blur(2px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  z-index: 100;
+  top: 0;
+}
+.popup__msg {
+  margin: 0 auto;
+  width: 85%;
+  min-width: 300px;
+  max-width: 400px;
+  padding: 30px;
+  text-align: center;
+  background: #fff;
+  border-radius: 3px;
+}
+.popup__msg p {
+  margin: 0 0 20px;
+  line-height: 1.3;
+}
+.popup__close {
+  margin: 0;
+  outline: none;
+  border: none;
+  padding: 10px 15px;
+  color: #fff;
+  font-size: 0.8rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  transition: background 0.1s ease-out;
+  border-radius: 3px;
+  background: silver;
+}
+.popup__close:hover {
+  background: #b3b3b3;
+}
+.popup__close:active {
+  background: #9a9a9a;
 }
 
 /*# sourceMappingURL=styles.css.map */

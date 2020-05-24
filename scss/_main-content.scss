@@ -404,6 +404,9 @@ h3 {
       &:not(:last-of-type) {
         margin-bottom: 20px;
       }
+      &:last-of-type {
+        margin-bottom: 50px;
+      }
     }
     & p {
       margin: 0;

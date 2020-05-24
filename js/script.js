@@ -42,6 +42,10 @@ const button_publicON = document.getElementById('public_on');
 const button_publicOFF = document.getElementById('public_off');
 const timezone = document.getElementById('timezone');
 
+// Pop Ups --------------------------------------------------->
+const body = document.querySelector('body');
+const content = document.querySelector('.grid-outer');
+
 
 // Functions =================================================>
 
@@ -233,17 +237,31 @@ searchResults.addEventListener('click', (e) => {
 
 // submit button
 sendMsgButton.addEventListener('click', (e) => {
+  const popUpError = '<div class="popup__msg"><p>Both user name and message text need to be filled!</p><button class="popup__close">Close</button></div>';
+  const popUp = document.createElement('DIV');
+  popUp.className = 'popup__overlay';
 
   if (userSearch.value.length > 0 && userMsg.value.length > 0) {
     e.preventDefault();
     let userName = userSearch.value;
-    window.alert(`Awesome! The message has been sent to ${userName}. No turning back now!!`);
+    const popUpText = `<div class="popup__msg"><p>Awesome! The message has been sent to ${userName}. No turning back now!!</p><button class="popup__close">Close</button></div>`;
+    popUp.innerHTML = popUpText;
+    body.insertBefore(popUp, content);
     clearInput(userSearch);
     clearInput(userMsg);
   } else {
-    window.alert('Both user name and message text need to be filled!');
+    popUp.innerHTML = popUpError;
+    body.insertBefore(popUp, content);
+    // window.alert('Both user name and message text need to be filled!');
   }
+});
 
+body.addEventListener('click', (e) => {
+  if (e.target.className === 'popup__close') {
+    const popUpMsg_close = document.querySelector('.popup__close');
+        const popUp = body.firstElementChild;
+        body.removeChild(popUp);
+  }
 });
 
 
@@ -287,6 +305,12 @@ buttonSave.addEventListener('click', () => {
   let checkEmail = button_emailON.checked;
   let checkPublic = button_publicON.checked;
   let timezoneSelected = timezone.selectedIndex;
+  const popUpText = `<div class="popup__msg"><p>Your settings have been saved!</p><button class="popup__close">Close</button></div>`;
+  const popUp = document.createElement('DIV');
+
+  popUp.className = 'popup__overlay';
+  popUp.innerHTML = popUpText;
+  body.insertBefore(popUp, content);
 
   if (checkEmail) { // if email button is checked 'on'
     localStorage.setItem('email', true); // save email key as true
@@ -302,7 +326,6 @@ buttonSave.addEventListener('click', () => {
   localStorage.setItem('timezone', timezoneSelected);
 
 });
-
 
 // listen to cancel button
 buttonCancel.addEventListener('click', () => {
