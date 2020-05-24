@@ -461,7 +461,7 @@ body {
   height: 100%;
   display: grid;
   grid-template-columns: 1fr;
-  grid-auto-rows: minmax(300px, auto);
+  grid-auto-rows: auto;
   grid-template-areas: "dash-top" "dash-daily" "dash-mobile" "dash-social" "dash-members" "dash-recent" "dash-msg" "dash-settings";
   grid-gap: 5px;
 }
@@ -591,8 +591,9 @@ body {
 main {
   grid-area: main;
   color: #535353;
-  width: 100%;
+  max-width: 100%;
   height: 100%;
+  overflow-x: hidden;
 }
 
 h2, h3 {
