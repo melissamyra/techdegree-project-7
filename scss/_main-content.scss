@@ -1,9 +1,23 @@
 // Main Content ----------------->
 
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: darken($bg, 10%);
+}
+
+::-webkit-scrollbar-thumb {
+  background: lighten($bg, 2%);
+  border-radius: 5px;
+  border: none;
+}
+
 main {
   @include grid(main);
   color: #535353;
-  max-width: 100%;
+  width: calc(100vw - 60px);
   height: 100%;
   overflow-x: hidden;
 }
