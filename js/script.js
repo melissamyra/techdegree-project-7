@@ -270,29 +270,28 @@ body.addEventListener('click', (e) => {
 // listen to settings section
 settingsSection.addEventListener('click', (e) => {
 
+  let button = e.target;
+  let buttonSwitch = button.parentNode;
+  let buttonON = buttonSwitch.firstElementChild;
+
   if (e.target.className === 'switch-circle') {
-    let button = e.target;
-    let buttonSwitch = button.parentNode;
     let buttonOFF = button.previousElementSibling.previousElementSibling;
-    let buttonON = buttonSwitch.firstElementChild;
 
     if (buttonON.checked === false) {
       buttonON.checked = true;
-      setBGColor(buttonSwitch, '#5dd2d6');
+      animate(buttonSwitch, 'bgON .3s forwards');
     } else {
       buttonOFF.checked = true;
-      setBGColor(buttonSwitch, '');
+      animate(buttonSwitch, 'bgOFF .3s forwards');
     }
   }
 
   if (e.target.tagName === 'LABEL') {
-    let button = e.target;
-    let buttonSwitch = button.parentNode;
 
-    if (buttonSwitch.style.background === '') {
-      setBGColor(buttonSwitch, '#5dd2d6');
+    if (buttonON.checked) {
+      animate(buttonSwitch, 'bgOFF .3s forwards');
     } else {
-      setBGColor(buttonSwitch, '');
+      animate(buttonSwitch, 'bgON .3s forwards');
     }
   }
 
@@ -331,9 +330,9 @@ buttonSave.addEventListener('click', () => {
 buttonCancel.addEventListener('click', () => {
   //reset switches
   button_emailOFF.checked = true;
-  setBGColor(button_emailOFF.parentNode, '');
+  animate(button_emailOFF.parentNode, 'bgOFF .3s forwards');
   button_publicOFF.checked = true;
-  setBGColor(button_publicOFF.parentNode, '');
+  animate(button_publicOFF.parentNode, 'bgOFF .3s forwards');
   timezone.selectedIndex = 0;
   //remove local storage data
   localStorage.removeItem('email');

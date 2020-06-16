@@ -443,12 +443,14 @@ h3 {
       display: flex;
       justify-content: space-between;
       align-items: center;
+      position: relative;
       &-circle {
         width: 22px;
         height: 22px;
         background: #fff;
         border: 2px solid darken($bg,5%);
         border-radius: 50%;
+        transition: transform .3s;
         &:hover {
           @extend %hover;
         }
@@ -465,7 +467,7 @@ h3 {
             display: block;
           }
           &:checked ~ .switch-circle {
-            order: 2;
+            transform: translateX(0);
           }
         }
         &_off {
@@ -476,7 +478,7 @@ h3 {
             display: block;
           }
           &:checked ~ .switch-circle {
-            order: -1;
+            transform: translateX(44px);
           }
         }
       }
@@ -485,14 +487,16 @@ h3 {
       font-size: .8rem;
       font-weight: 500;
       padding: 0 10px;
+      position: absolute;
       &:hover {
         @extend %hover;
       }
       &.on {
-
+        left: 0;
       }
       &.off {
         color: #fff;
+        right: 0;
       }
     }
     &-timezone {

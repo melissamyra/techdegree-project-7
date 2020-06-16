@@ -87,3 +87,21 @@
     opacity: 0;
   }
 }
+
+@keyframes bgON {
+  0% {
+    background: $bg;
+  }
+  100% {
+    background: $accent;
+  }
+}
+
+@keyframes bgOFF {
+  0% {
+    background: $accent;
+  }
+  100% {
+    background: $bg;
+  }
+}
