@@ -455,7 +455,7 @@ template {
 body {
   font-family: "Roboto", sans-serif;
   background: #f3f3f3;
-  width: 100vw;
+  width: 100%;
 }
 
 .grid-outer {
@@ -483,7 +483,6 @@ body {
 }
 @media (min-width: 768px) {
   .grid-main {
-    width: calc(100vw - 60px);
     grid-template-columns: 1fr 1fr;
     grid-template-areas: "dash-top dash-top" "dash-daily dash-mobile" "dash-social dash-social" "dash-members dash-members" "dash-recent dash-recent" "dash-msg dash-msg" "dash-settings dash-settings";
   }
@@ -622,8 +621,6 @@ main {
   grid-area: main;
   color: #535353;
   height: 100%;
-  width: 100%;
-  overflow-x: hidden;
 }
 
 h2, h3 {

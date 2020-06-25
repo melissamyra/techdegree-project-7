@@ -7,7 +7,7 @@
 body {
   font-family: 'Roboto', sans-serif;
   background: $bg;
-  width: 100vw;
+  width: 100%;
 }
 
 // Main Grids ===============================
@@ -47,7 +47,6 @@ body {
       "dash-settings";
     grid-gap: 5px;
     @include mq(768px) {
-      width: calc(100vw - 60px);
       grid-template-columns: 1fr 1fr;
       grid-template-areas:
         "dash-top dash-top"
